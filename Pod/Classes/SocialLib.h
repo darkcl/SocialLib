@@ -20,7 +20,9 @@ typedef void (^SLShareFailure)(NSDictionary* message, NSError* error);
 - (NSString *)contentURL;
 - (NSArray *)images;
 - (NSString *)thumbnailImageURL;
+
 - (NSString *)videoURL;
+- (UIImage *)videoThumbnail;
 
 @end
 

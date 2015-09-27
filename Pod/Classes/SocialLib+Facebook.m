@@ -62,6 +62,33 @@ static SLShareFailure _fbfailureBlock;
             [FBSDKShareDialog showFromViewController:nil
                                          withContent:content
                                             delegate:[SocialLib sharedInstance]];
+        }else if ([obj respondsToSelector:@selector(videoURL)] && obj.videoURL.length != 0) {
+            FBSDKShareVideoContent *content = [[FBSDKShareVideoContent alloc] init];
+            FBSDKShareVideo *video = [[FBSDKShareVideo alloc] init];
+            video.videoURL = [NSURL URLWithString:obj.videoURL];
+            content.video = video;
+            
+            [FBSDKShareDialog showFromViewController:nil
+                                         withContent:content
+                                            delegate:[SocialLib sharedInstance]];
+        }else if ([obj respondsToSelector:@selector(images)] && obj.images.count != 0) {
+            NSMutableArray *imagesArray = [[NSMutableArray alloc] init];
+            for (UIImage *image in obj.images) {
+                FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
+                photo.image = image;
+                photo.userGenerated = YES;
+                [imagesArray addObject:photo];
+            }
+            FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+            content.photos = imagesArray;
+            [FBSDKShareDialog showFromViewController:nil
+                                         withContent:content
+                                            delegate:[SocialLib sharedInstance]];
+        }else{
+            NSError *error = [NSError errorWithDomain:@"SocialLib"
+                                                 code:3
+                                             userInfo:@{NSLocalizedDescriptionKey: @"Modal doesn't have enough information"}];
+            failureBlock(nil, error);
         }
     }else{
         NSError *error = [NSError errorWithDomain:@"SocialLib"
