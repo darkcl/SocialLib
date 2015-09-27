@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+SocialLib handles sharing message to multiple social media.
+Now support twitter and facebook.
                        DESC
 
   s.homepage         = "https://github.com/darkcl/SocialLib"
