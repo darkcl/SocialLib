@@ -22,18 +22,249 @@
       <h1>
 <a id="sociallib" class="anchor" href="#sociallib" aria-hidden="true"><span class="octicon octicon-link"></span></a>SocialLib</h1>
 
-<p><a href="https://travis-ci.org/Yeung%20Yiu%20Hung/SocialLib"><img src="http://img.shields.io/travis/Yeung%20Yiu%20Hung/SocialLib.svg?style=flat" alt="CI Status"></a>
+<p><a href="https://travis-ci.org/darkcl/SocialLib"><img src="https://travis-ci.org/darkcl/SocialLib.svg?branch=master" alt="CI Status"></a>
 <a href="http://cocoapods.org/pods/SocialLib"><img src="https://img.shields.io/cocoapods/v/SocialLib.svg?style=flat" alt="Version"></a>
 <a href="http://cocoapods.org/pods/SocialLib"><img src="https://img.shields.io/cocoapods/l/SocialLib.svg?style=flat" alt="License"></a>
 <a href="http://cocoapods.org/pods/SocialLib"><img src="https://img.shields.io/cocoapods/p/SocialLib.svg?style=flat" alt="Platform"></a></p>
+
+<h3>
+<a id="general-setup" class="anchor" href="#general-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>General Setup</h3>
+
+<p>In your .pch, add following lines</p>
+
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SocialLib/SocialLib.h<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-c">//If you want facebook share, add:</span>
+#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SocialLib/SocialLib+Facebook.h<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-c">//If you want twitter share, add:</span>
+#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SocialLib/SocialLib+Twitter.h<span class="pl-pds">&gt;</span></span></pre></div>
+
+<p>In your AppDelegate,</p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">BOOL</span>)application:(UIApplication *)application didFinishLaunchingWithOptions:(<span class="pl-c1">NSDictionary</span> *)launchOptions
+{
+    <span class="pl-c">// Override point for customization after application launch.</span>
+    <span class="pl-k">return</span> [SocialLib <span class="pl-c1">connectSocialPlatformWithApplication:</span>application <span class="pl-c1">didFinishLaunchingWithOptions:</span>launchOptions];
+}
+
+- (<span class="pl-k">void</span>)applicationDidBecomeActive:(UIApplication *)application
+{
+    [SocialLib <span class="pl-c1">applicationDidBecomeActie:</span>application];
+}
+
+- (<span class="pl-k">BOOL</span>)application:(UIApplication *)application
+            openURL:(<span class="pl-c1">NSURL</span> *)url
+  sourceApplication:(<span class="pl-c1">NSString</span> *)sourceApplication
+         annotation:(<span class="pl-k">id</span>)annotation {
+    <span class="pl-k">return</span> [SocialLib <span class="pl-c1">handleOpenURL:</span>application
+                            <span class="pl-c1">openURL:</span>url
+                  <span class="pl-c1">sourceApplication:</span>sourceApplication
+                         <span class="pl-c1">annotation:</span>annotation];
+}</pre></div>
+
+<h3>
+<a id="facebook-setup" class="anchor" href="#facebook-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Facebook Setup</h3>
+
+<ol>
+<li>In Xcode right-click your .plist file and choose "Open As Source Code".</li>
+<li>Copy &amp; Paste the XML snippet into the body of your file (...).</li>
+<li>Replace:
+
+<ul>
+<li>fb{FACEBOOK_APP_ID} with your Facebook App ID and the prefix fb. E.g.: fb123456.</li>
+<li>{FACEBOOK_APP_ID} with your Facebook App ID.</li>
+<li>{Your App Name} with the Display Name you configured in the App Dashboard.</li>
+</ul>
+</li>
+</ol>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">key</span>&gt;CFBundleURLTypes&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">array</span>&gt;
+  &lt;<span class="pl-ent">dict</span>&gt;
+    &lt;<span class="pl-ent">key</span>&gt;CFBundleURLSchemes&lt;/<span class="pl-ent">key</span>&gt;
+    &lt;<span class="pl-ent">array</span>&gt;
+      &lt;<span class="pl-ent">string</span>&gt;fb{FACEBOOK_APP_ID}&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;/<span class="pl-ent">array</span>&gt;
+  &lt;/<span class="pl-ent">dict</span>&gt;
+&lt;/<span class="pl-ent">array</span>&gt;
+&lt;<span class="pl-ent">key</span>&gt;FacebookAppID&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">string</span>&gt;{FACEBOOK_APP_ID}&lt;/<span class="pl-ent">string</span>&gt;
+&lt;<span class="pl-ent">key</span>&gt;FacebookDisplayName&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">string</span>&gt;{Your App Name}&lt;/<span class="pl-ent">string</span>&gt;</pre></div>
+
+<p><strong>For iOS 9</strong></p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">key</span>&gt;NSAppTransportSecurity&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">dict</span>&gt;
+  &lt;<span class="pl-ent">key</span>&gt;NSExceptionDomains&lt;/<span class="pl-ent">key</span>&gt;
+  &lt;<span class="pl-ent">dict</span>&gt;
+    &lt;<span class="pl-ent">key</span>&gt;facebook.com&lt;/<span class="pl-ent">key</span>&gt;
+    &lt;<span class="pl-ent">dict</span>&gt;
+      &lt;<span class="pl-ent">key</span>&gt;NSIncludesSubdomains&lt;/<span class="pl-ent">key</span>&gt; &lt;<span class="pl-ent">true</span>/&gt;        
+      &lt;<span class="pl-ent">key</span>&gt;NSExceptionRequiresForwardSecrecy&lt;/<span class="pl-ent">key</span>&gt; &lt;<span class="pl-ent">false</span>/&gt;
+    &lt;/<span class="pl-ent">dict</span>&gt;
+    &lt;<span class="pl-ent">key</span>&gt;fbcdn.net&lt;/<span class="pl-ent">key</span>&gt;
+    &lt;<span class="pl-ent">dict</span>&gt;
+      &lt;<span class="pl-ent">key</span>&gt;NSIncludesSubdomains&lt;/<span class="pl-ent">key</span>&gt; &lt;<span class="pl-ent">true</span>/&gt;
+      &lt;<span class="pl-ent">key</span>&gt;NSExceptionRequiresForwardSecrecy&lt;/<span class="pl-ent">key</span>&gt;  &lt;<span class="pl-ent">false</span>/&gt;
+    &lt;/<span class="pl-ent">dict</span>&gt;
+    &lt;<span class="pl-ent">key</span>&gt;akamaihd.net&lt;/<span class="pl-ent">key</span>&gt;
+    &lt;<span class="pl-ent">dict</span>&gt;
+      &lt;<span class="pl-ent">key</span>&gt;NSIncludesSubdomains&lt;/<span class="pl-ent">key</span>&gt; &lt;<span class="pl-ent">true</span>/&gt;
+      &lt;<span class="pl-ent">key</span>&gt;NSExceptionRequiresForwardSecrecy&lt;/<span class="pl-ent">key</span>&gt; &lt;<span class="pl-ent">false</span>/&gt;
+    &lt;/<span class="pl-ent">dict</span>&gt;
+  &lt;/<span class="pl-ent">dict</span>&gt;
+&lt;/<span class="pl-ent">dict</span>&gt;
+
+&lt;<span class="pl-ent">key</span>&gt;LSApplicationQueriesSchemes&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">array</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20130214&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20130410&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20130702&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20131010&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20131219&lt;/<span class="pl-ent">string</span>&gt;    
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20140410&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20140116&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20150313&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbapi20150629&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbauth&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fbauth2&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;<span class="pl-ent">string</span>&gt;fb-messenger-api20140430&lt;/<span class="pl-ent">string</span>&gt;
+&lt;/<span class="pl-ent">array</span>&gt;</pre></div>
+
+<h3>
+<a id="twitter-setup" class="anchor" href="#twitter-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Twitter Setup</h3>
+
+<ol>
+<li>In Xcode right-click your .plist file and choose "Open As Source Code".</li>
+<li>Copy &amp; Paste the XML snippet into the body of your file (CFBundleURLTypes
+...).</li>
+<li>Replace {URL Scheme} to what you want:</li>
+</ol>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dict</span>&gt;
+    &lt;<span class="pl-ent">key</span>&gt;CFBundleURLSchemes&lt;/<span class="pl-ent">key</span>&gt;
+    &lt;<span class="pl-ent">array</span>&gt;
+        &lt;<span class="pl-ent">string</span>&gt;{URL Scheme}&lt;/<span class="pl-ent">string</span>&gt;
+    &lt;/<span class="pl-ent">array</span>&gt;
+&lt;/<span class="pl-ent">dict</span>&gt;</pre></div>
+
+<ol>
+<li>Add following lines into body of your file (...)</li>
+<li>Replace:
+
+<ul>
+<li>{URL Scheme} with the same URL Scheme as above.</li>
+<li>{Twitter Consumer Key} with your Twitter App Cosumer key - <a href="https://apps.twitter.com">Register Here</a>.</li>
+<li>{Twitter Consumer Secret} with your Twitter App Cosumer Secret - <a href="https://apps.twitter.com">Register Here</a>.</li>
+</ul>
+</li>
+</ol>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">key</span>&gt;TwitterCallbackURL&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">string</span>&gt;{URL Scheme}&lt;/<span class="pl-ent">string</span>&gt;
+&lt;<span class="pl-ent">key</span>&gt;TwitterConsumerKey&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">string</span>&gt;{Twitter Consumer Key}&lt;/<span class="pl-ent">string</span>&gt;
+&lt;<span class="pl-ent">key</span>&gt;TwitterConsumerSecret&lt;/<span class="pl-ent">key</span>&gt;
+&lt;<span class="pl-ent">string</span>&gt;{Twitter Consumer Secret}&lt;/<span class="pl-ent">string</span>&gt;</pre></div>
+
+<p><em>For Twitter application, you must have a valid callback url, otherwise the sharing will not work.</em></p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
 
-<h2>
-<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<h3>
+<a id="sharing-sample" class="anchor" href="#sharing-sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sharing Sample</h3>
+
+<p>You need a modal object to use SocialLib share</p>
+
+<p>InfoModal.h</p>
+
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>Foundation/Foundation.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SocialLib/SocialLib.h<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">@interface</span> <span class="pl-en">InfoModal</span> : <span class="pl-e">NSObject</span> &lt;SocialLibMessage&gt;{
+
+}
+
+<span class="pl-k">@property</span> (<span class="pl-k">nonatomic</span>, <span class="pl-k">strong</span>) <span class="pl-c1">NSString</span> *infoTitle;
+<span class="pl-k">@property</span> (<span class="pl-k">nonatomic</span>, <span class="pl-k">strong</span>) <span class="pl-c1">NSString</span> *infoContent;
+<span class="pl-k">@property</span> (<span class="pl-k">nonatomic</span>, <span class="pl-k">strong</span>) <span class="pl-c1">NSString</span> *infoContentURL;
+<span class="pl-k">@property</span> (<span class="pl-k">nonatomic</span>, <span class="pl-k">strong</span>) <span class="pl-c1">NSArray</span> *infoImages;
+<span class="pl-k">@property</span> (<span class="pl-k">nonatomic</span>, <span class="pl-k">strong</span>) <span class="pl-c1">NSString</span> *infoThumbnailImageURL;
+<span class="pl-k">@property</span> (<span class="pl-k">nonatomic</span>, <span class="pl-k">strong</span>) <span class="pl-c1">NSString</span> *infoVideoURL;</pre></div>
+
+<p>InfoModal.m</p>
+
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">"</span>InfoModal.h<span class="pl-pds">"</span></span>
+
+
+<span class="pl-k">@implementation</span> <span class="pl-en">InfoModal</span>
+
+#<span class="pl-k">pragma mark</span> - SocialLibMessage
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">title</span>{
+    <span class="pl-k">return</span> _infoTitle;
+}
+
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">content</span>{
+    <span class="pl-k">return</span> _infoContent;
+}
+
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">contentURL</span>{
+    <span class="pl-k">return</span> _infoContentURL;
+}
+
+- (<span class="pl-c1">NSArray</span> *)<span class="pl-en">images</span>{
+    <span class="pl-k">return</span> _infoImages;
+}
+
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">thumbnailImageURL</span>{
+    <span class="pl-k">return</span> _infoThumbnailImageURL;
+}
+
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">videoURL</span>{
+    <span class="pl-k">return</span> _infoVideoURL;
+}
+
+- (<span class="pl-c1">NSString</span> *)<span class="pl-en">tweetContent</span>{
+    <span class="pl-k">return</span> [<span class="pl-c1">NSString</span> <span class="pl-c1">stringWithFormat:</span><span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span> - <span class="pl-c1">%@</span> <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>,_infoTitle, _infoContent, _infoContentURL];
+}
+
+<span class="pl-k">@end</span></pre></div>
+
+<p>To share facebook use</p>
+
+<div class="highlight highlight-source-objc"><pre>InfoModal *info = [[InfoModal <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+info.infoTitle = <span class="pl-s"><span class="pl-pds">@"</span>SocialLib<span class="pl-pds">"</span></span>;
+info.infoContent = <span class="pl-s"><span class="pl-pds">@"</span>Share via SocialLib<span class="pl-pds">"</span></span>;
+info.infoContentURL = <span class="pl-s"><span class="pl-pds">@"</span>http://darkcl.github.io/SocialLib<span class="pl-pds">"</span></span>;
+[SocialLib <span class="pl-c1">shareModal:</span>info
+           <span class="pl-c1">toPlatform:</span><span class="pl-c1">kSocialLibPlatformFacebook</span>
+              <span class="pl-c1">success:</span>^(<span class="pl-c1">NSDictionary</span> *message) {
+                  <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, message);
+              }
+              <span class="pl-c1">failure:</span>^(<span class="pl-c1">NSDictionary</span> *message, <span class="pl-c1">NSError</span> *error) {
+                  <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+              }];</pre></div>
+
+<p>To share twitter use</p>
+
+<div class="highlight highlight-source-objc"><pre>InfoModal *info = [[InfoModal <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+info.infoTitle = <span class="pl-s"><span class="pl-pds">@"</span>SocialLib<span class="pl-pds">"</span></span>;
+info.infoContent = <span class="pl-s"><span class="pl-pds">@"</span>Share via SocialLib<span class="pl-pds">"</span></span>;
+info.infoContentURL = <span class="pl-s"><span class="pl-pds">@"</span>http://darkcl.github.io/SocialLib<span class="pl-pds">"</span></span>;
+[SocialLib <span class="pl-c1">shareModal:</span>info
+           <span class="pl-c1">toPlatform:</span><span class="pl-c1">kSocialLibPlatformTwitter</span>
+              <span class="pl-c1">success:</span>^(<span class="pl-c1">NSDictionary</span> *message) {
+                  <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, message);
+              }
+              <span class="pl-c1">failure:</span>^(<span class="pl-c1">NSDictionary</span> *message, <span class="pl-c1">NSError</span> *error) {
+                  <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, error);
+              }];</pre></div>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
@@ -41,7 +272,7 @@
 <p>SocialLib is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
 
-<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">"</span>SocialLib<span class="pl-pds">"</span></span></pre></div>
+<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib<span class="pl-pds">'</span></span></pre></div>
 
 <h2>
 <a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
