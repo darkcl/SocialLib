@@ -13,4 +13,7 @@
 #ifdef __OBJC__
     @import UIKit;
     @import Foundation;
+#import <SocialLib/SocialLib.h>
+#import <SocialLib/SocialLib+Facebook.h>
+#import <SocialLib/SocialLib+Twitter.h>
 #endif

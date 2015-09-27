@@ -142,10 +142,8 @@ static id<SocialLibMessage> twitterShareMsg;
                           uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
                               
                           } successBlock:^(NSDictionary *status) {
-                              NSLog(@"Twitter OK");
                               successBlock(status);
                           } errorBlock:^(NSError *error) {
-                              NSLog(@"Twitter Fail : %@",[error localizedDescription]);
                               failureBlock(nil, error);
                           }];
                 }else{
@@ -157,11 +155,9 @@ static id<SocialLibMessage> twitterShareMsg;
                            displayCoordinates:nil
                                      trimUser:nil
                                  successBlock:^(NSDictionary *status) {
-                                     NSLog(@"Twitter OK");
                                      successBlock(status);
                                  }
                                    errorBlock:^(NSError *error) {
-                                       NSLog(@"Twitter Fail : %@",[error localizedDescription]);
                                        failureBlock(nil, error);
                                    }];
                 }

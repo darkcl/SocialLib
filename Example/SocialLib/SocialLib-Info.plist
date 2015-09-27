@@ -43,12 +43,6 @@
 	<string>1.0</string>
 	<key>FacebookAppID</key>
 	<string>403898573141476</string>
-	<key>TwitterConsumerKey</key>
-	<string>VR5s6BaU8LlgNkYtR7UTa5YM8</string>
-	<key>TwitterCallbackURL</key>
-	<string>sociallibdemo</string>
-	<key>TwitterConsumerSecret</key>
-	<string>pyiGttGjlR9iDS8MrszGTy4XkhGloiQz6CirXxaP7bSl0kb8Cr</string>
 	<key>FacebookDisplayName</key>
 	<string>SocialLib-Demo</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -96,6 +90,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>TwitterCallbackURL</key>
+	<string>sociallibdemo</string>
+	<key>TwitterConsumerKey</key>
+	<string>VR5s6BaU8LlgNkYtR7UTa5YM8</string>
+	<key>TwitterConsumerSecret</key>
+	<string>pyiGttGjlR9iDS8MrszGTy4XkhGloiQz6CirXxaP7bSl0kb8Cr</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

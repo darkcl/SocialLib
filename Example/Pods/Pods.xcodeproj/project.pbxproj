@@ -76,7 +76,6 @@
 		28513BD9ADF676303AA90312DD37710A /* FBSDKShareConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B1C95406112D05A26DAC0745DB0AE8 /* FBSDKShareConstants.m */; };
 		2909680B9FA0473B5D16082935401E98 /* FBSDKProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 37492BCE8532635884CAD2DA0D4A48B5 /* FBSDKProfile.m */; };
 		290A9255E53B2E7A953F869785084D54 /* NSString+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB7AE437B5D90C98ED44006B815A67D /* NSString+STTwitter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		29D8D8836CC4EA6C48252DDCCB6B8309 /* SLGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 200F3B49F8A4EB169A365F5EC48A0B6A /* SLGlobal.h */; };
 		2AFD61398436CE95B3225976FDCEFB5F /* FBSDKBridgeAPIProtocolWebV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B1725193E21B3EFF22D989A18B9A0A /* FBSDKBridgeAPIProtocolWebV2.m */; };
 		2C32B6EA89D30DFF1FE6BFB9D3A2C284 /* STTwitterHTML.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E2379130F02D130D859886FF6474A7 /* STTwitterHTML.h */; };
 		2DBBD5BEE7F5FDAAF27BEA57F6C7514F /* FBSDKGraphRequestBody.h in Headers */ = {isa = PBXBuildFile; fileRef = B1D715CD2F6483513EFDA2F74E0016C8 /* FBSDKGraphRequestBody.h */; };
@@ -571,7 +570,6 @@
 		1E9C9008AF4B67FEA4B0BEF7E92E0F23 /* FBSDKTooltipView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTooltipView.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKTooltipView.h; sourceTree = "<group>"; };
 		1F70A4D7FEDB9134FDEF407715F1CDAB /* FBSDKInternalUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKInternalUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKInternalUtility.h; sourceTree = "<group>"; };
 		2002D7EF284759066F78C54211C5A09E /* FBSDKApplicationDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKApplicationDelegate.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKApplicationDelegate.m; sourceTree = "<group>"; };
-		200F3B49F8A4EB169A365F5EC48A0B6A /* SLGlobal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLGlobal.h; sourceTree = "<group>"; };
 		205328ADE2F3A98F13C73D7C8B29BD09 /* FBSDKGraphRequestConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestConnection.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.m; sourceTree = "<group>"; };
 		205E454C092E337E1CD3187414EE76E7 /* FBSDKTestUsersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTestUsersManager.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKTestUsersManager.h; sourceTree = "<group>"; };
 		208D4348A0BCB533A717B7D25E7DFA6E /* FBSDKAccessTokenCacheV3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCacheV3.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3.h; sourceTree = "<group>"; };
@@ -1386,7 +1384,6 @@
 		DE47F20C26A61F1EF159E11AEC05A8DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				200F3B49F8A4EB169A365F5EC48A0B6A /* SLGlobal.h */,
 				896447C8FFD81F73006996F4BA455E51 /* SocialLib.h */,
 				6B45FFDAC8277A3928F9034F97591BFC /* SocialLib.m */,
 				7FF170D43D6D68224A9171CC700EDD06 /* SocialLib+Facebook.h */,
@@ -1621,7 +1618,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29D8D8836CC4EA6C48252DDCCB6B8309 /* SLGlobal.h in Headers */,
 				4FB88A9B4F0174CEE23875A262341423 /* SocialLib+Facebook.h in Headers */,
 				73CFBF8238330D98AD6AF47795E563C0 /* SocialLib+Twitter.h in Headers */,
 				DAFF7B6188E091C9339F3C6FCF0E0670 /* SocialLib.h in Headers */,

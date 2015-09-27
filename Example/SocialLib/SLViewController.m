@@ -8,7 +8,6 @@
 
 #import "SLViewController.h"
 #import "InfoModal.h"
-#import <SocialLib/SLGlobal.h>
 
 @interface SLViewController ()
 
@@ -32,7 +31,7 @@
     InfoModal *info = [[InfoModal alloc] init];
     info.infoTitle = @"SocialLib";
     info.infoContent = @"Share via SocialLib";
-    info.infoContentURL = @"http://darkcl.github.io";
+    info.infoContentURL = @"http://darkcl.github.io/SocialLib";
     [SocialLib shareModal:info
                toPlatform:kSocialLibPlatformFacebook
                   success:^(NSDictionary *message) {
@@ -47,7 +46,7 @@
     InfoModal *info = [[InfoModal alloc] init];
     info.infoTitle = @"SocialLib";
     info.infoContent = @"Share via SocialLib";
-    info.infoContentURL = @"http://darkcl.github.io";
+    info.infoContentURL = @"http://darkcl.github.io/SocialLib";
     [SocialLib shareModal:info
                toPlatform:kSocialLibPlatformTwitter
                   success:^(NSDictionary *message) {
