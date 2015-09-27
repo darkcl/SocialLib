@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C56DE95A532E5904BEAD4F0 /* Pods_SocialLib_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9993A2DC7F8216C2F724C46 /* Pods_SocialLib_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5277AC79A29B23F42EC7858C /* libPods-SocialLib_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 719668BA0D824636C1D62815 /* libPods-SocialLib_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,8 +21,10 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		7496F25D1BB7F2A500E85F03 /* InfoModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7496F25C1BB7F2A500E85F03 /* InfoModal.m */; settings = {ASSET_TAGS = (); }; };
+		7496F25F1BB7F95700E85F03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7496F25E1BB7F95700E85F03 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7859117A236BF8E6F0423BBB /* libPods-SocialLib_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EFB28192E65555E8614B3F /* libPods-SocialLib_Tests.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		BD755F3E30B10F64DCC3D04E /* Pods_SocialLib_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C59A695F991CD7EBC8FE21 /* Pods_SocialLib_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05C59A695F991CD7EBC8FE21 /* Pods_SocialLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A73E63313DB7D3A18968238 /* Pods-SocialLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLib_Tests/Pods-SocialLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3422DE9C7C5AA4A866256431 /* SocialLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SocialLib.podspec; path = ../SocialLib.podspec; sourceTree = "<group>"; };
 		4D53B3AF4534953400EEB464 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* SocialLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SocialLib.app; path = SocialLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* SocialLib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -53,17 +54,21 @@
 		6003F5A5195388D20070C39A /* SLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* SLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = SocialLib_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* SocialLib_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialLib_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		64B3640CA19DF59A4F9330F7 /* Pods-SocialLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLib_Example/Pods-SocialLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		719668BA0D824636C1D62815 /* libPods-SocialLib_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocialLib_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7496F25B1BB7F2A500E85F03 /* InfoModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoModal.h; sourceTree = "<group>"; };
+		7496F25C1BB7F2A500E85F03 /* InfoModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoModal.m; sourceTree = "<group>"; };
+		7496F25E1BB7F95700E85F03 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8C8FCD280958EEEB4A449612 /* Pods-SocialLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLib_Tests/Pods-SocialLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A2AC110282A25807EFC8D7E /* Pods-SocialLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLib_Example/Pods-SocialLib_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A9993A2DC7F8216C2F724C46 /* Pods_SocialLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4EFB28192E65555E8614B3F /* libPods-SocialLib_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocialLib_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B333DEE6DD1D1F2B025C2E03 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +80,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				2C56DE95A532E5904BEAD4F0 /* Pods_SocialLib_Example.framework in Frameworks */,
+				5277AC79A29B23F42EC7858C /* libPods-SocialLib_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +91,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				BD755F3E30B10F64DCC3D04E /* Pods_SocialLib_Tests.framework in Frameworks */,
+				7859117A236BF8E6F0423BBB /* libPods-SocialLib_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +113,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* SocialLib.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* SocialLib_Example.app */,
+				6003F5AE195388D20070C39A /* SocialLib_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,8 +126,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				A9993A2DC7F8216C2F724C46 /* Pods_SocialLib_Example.framework */,
-				05C59A695F991CD7EBC8FE21 /* Pods_SocialLib_Tests.framework */,
+				719668BA0D824636C1D62815 /* libPods-SocialLib_Example.a */,
+				A4EFB28192E65555E8614B3F /* libPods-SocialLib_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +142,9 @@
 				6003F5A6195388D20070C39A /* SLViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				7496F25B1BB7F2A500E85F03 /* InfoModal.h */,
+				7496F25C1BB7F2A500E85F03 /* InfoModal.m */,
+				7496F25E1BB7F95700E85F03 /* LaunchScreen.storyboard */,
 			);
 			name = "Example for SocialLib";
 			path = SocialLib;
@@ -204,7 +212,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				83957DFF40683175291255C4 /* Embed Pods Frameworks */,
 				57C0964E08451276781652A9 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -213,7 +220,7 @@
 			);
 			name = SocialLib_Example;
 			productName = SocialLib;
-			productReference = 6003F58A195388D20070C39A /* SocialLib.app */;
+			productReference = 6003F58A195388D20070C39A /* SocialLib_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* SocialLib_Tests */ = {
@@ -224,7 +231,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				29AFF72E374EE7CCE791E742 /* Embed Pods Frameworks */,
 				DF09378716AE7B75975713FF /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -234,7 +240,7 @@
 			);
 			name = SocialLib_Tests;
 			productName = SocialLibTests;
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* SocialLib_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -277,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				7496F25F1BB7F95700E85F03 /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -308,21 +315,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		29AFF72E374EE7CCE791E742 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialLib_Tests/Pods-SocialLib_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		57C0964E08451276781652A9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,21 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialLib_Example/Pods-SocialLib_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		83957DFF40683175291255C4 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialLib_Example/Pods-SocialLib_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAFB9522687B00CE1EEFA13A /* Check Pods Manifest.lock */ = {
@@ -393,6 +370,7 @@
 				6003F59E195388D20070C39A /* SLAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* SLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				7496F25D1BB7F2A500E85F03 /* InfoModal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
