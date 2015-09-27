@@ -11,4 +11,4 @@ install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
 - set -o pipefail && xcodebuild test -workspace Example/SocialLib.xcworkspace -scheme SocialLib-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-- pod lib lint --allow-warnings --use-libraries
+- pod lib lint --allow-warnings --use-libraries --quick
