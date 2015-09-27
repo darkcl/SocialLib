@@ -43,4 +43,19 @@
                   }];
 }
 
+- (IBAction)shareToTwitter:(id)sender {
+    InfoModal *info = [[InfoModal alloc] init];
+    info.infoTitle = @"SocialLib";
+    info.infoContent = @"Share via SocialLib";
+    info.infoContentURL = @"http://darkcl.github.io";
+    [SocialLib shareModal:info
+               toPlatform:kSocialLibPlatformTwitter
+                  success:^(NSDictionary *message) {
+                      NSLog(@"%@", message);
+                  }
+                  failure:^(NSDictionary *message, NSError *error) {
+                      NSLog(@"%@", error);
+                  }];
+}
+
 @end

@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "summary": "A short description of SocialLib.",
   "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/SocialLib",
+  "homepage": "https://github.com/darkcl/SocialLib",
   "license": "MIT",
   "authors": {
     "Yeung Yiu Hung": "hkclex@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/SocialLib.git",
+    "git": "https://github.com/darkcl/SocialLib.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -22,6 +22,7 @@
       "Pod/Assets/*.png"
     ]
   },
+  "frameworks": "Accounts",
   "dependencies": {
     "FBSDKCoreKit": [
 
@@ -30,6 +31,9 @@
 
     ],
     "FBSDKShareKit": [
+
+    ],
+    "STTwitter": [
 
     ]
   }

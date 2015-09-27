@@ -1,0 +1,1 @@
+SOCIALLIB_OTHER_LDFLAGS = -framework "Accounts"

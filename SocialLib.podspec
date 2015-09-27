@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/SocialLib"
+  s.homepage         = "https://github.com/darkcl/SocialLib"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Yeung Yiu Hung" => "hkclex@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SocialLib.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/darkcl/SocialLib.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
@@ -37,7 +37,9 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Accounts'
   s.dependency 'FBSDKCoreKit'
   s.dependency 'FBSDKLoginKit'
   s.dependency 'FBSDKShareKit'
+  s.dependency 'STTwitter'
 end

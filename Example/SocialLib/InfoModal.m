@@ -36,4 +36,8 @@
     return _infoVideoURL;
 }
 
+- (NSString *)tweetContent{
+    return [NSString stringWithFormat:@"%@ - %@ %@",_infoTitle, _infoContent, _infoContentURL];
+}
+
 @end

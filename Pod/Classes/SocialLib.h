@@ -24,6 +24,8 @@ typedef void (^SLShareFailure)(NSDictionary* message, NSError* error);
 - (NSString *)videoURL;
 - (UIImage *)videoThumbnail;
 
+- (NSString *)tweetContent;
+
 @end
 
 @interface SocialLib : NSObject

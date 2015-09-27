@@ -8,3 +8,4 @@
 
 #import <SocialLib/SocialLib.h>
 #import <SocialLib/SocialLib+Facebook.h>
+#import <SocialLib/SocialLib+Twitter.h>
