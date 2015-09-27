@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SocialLib/SLGlobal.h>
+#import <SocialLib/SocialLib.h>
 
 @interface InfoModal : NSObject <SocialLibMessage>{
     

@@ -7,7 +7,6 @@
 //
 
 #import "SLAppDelegate.h"
-#import <SocialLib/SLGlobal.h>
 
 @implementation SLAppDelegate
 
