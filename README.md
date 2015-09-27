@@ -1,6 +1,6 @@
 # SocialLib
 
-[![CI Status](http://img.shields.io/travis/Yeung Yiu Hung/SocialLib.svg?style=flat)](https://travis-ci.org/Yeung Yiu Hung/SocialLib)
+[![CI Status](https://travis-ci.org/darkcl/SocialLib.svg?branch=master)](https://travis-ci.org/darkcl/SocialLib)
 [![Version](https://img.shields.io/cocoapods/v/SocialLib.svg?style=flat)](http://cocoapods.org/pods/SocialLib)
 [![License](https://img.shields.io/cocoapods/l/SocialLib.svg?style=flat)](http://cocoapods.org/pods/SocialLib)
 [![Platform](https://img.shields.io/cocoapods/p/SocialLib.svg?style=flat)](http://cocoapods.org/pods/SocialLib)

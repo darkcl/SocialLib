@@ -2555,6 +2555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 223B93E0FAAFD13F408530BD762DA18E /* SocialLib-Private.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SocialLib/SocialLib-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -2587,10 +2588,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E292237E8CD82A5A5A3D6607D2F3342 /* FBSDKShareKit-Private.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/FBSDKShareKit/FBSDKShareKit-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				New_Setting = "";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2631,10 +2634,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E292237E8CD82A5A5A3D6607D2F3342 /* FBSDKShareKit-Private.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/FBSDKShareKit/FBSDKShareKit-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				New_Setting = "";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2727,6 +2732,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 223B93E0FAAFD13F408530BD762DA18E /* SocialLib-Private.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SocialLib/SocialLib-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

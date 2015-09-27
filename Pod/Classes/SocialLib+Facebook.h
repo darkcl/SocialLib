@@ -8,8 +8,8 @@
 
 #import "SocialLib.h"
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKShareKit/FBSDKShareKit.h>
+
+@protocol FBSDKSharingDelegate;
 
 static NSString *kSocialLibPlatformFacebook = @"Facebook";
 

@@ -8,6 +8,9 @@
 
 #import "SocialLib+Facebook.h"
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+
 @implementation SocialLib (Facebook)
 
 static SLShareSuccess _fbsuccessBlock;
