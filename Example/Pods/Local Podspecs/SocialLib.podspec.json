@@ -24,9 +24,6 @@
   },
   "frameworks": "Accounts",
   "dependencies": {
-    "AFNetworking": [
-
-    ],
     "AFOAuth1Client": [
 
     ],
@@ -40,6 +37,12 @@
 
     ],
     "STTwitter": [
+
+    ],
+    "Weixin": [
+
+    ],
+    "WeiboSDK": [
 
     ]
   }

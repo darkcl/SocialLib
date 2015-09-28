@@ -499,8 +499,10 @@
 				GCC_PREFIX_HEADER = "SocialLib/SocialLib-Prefix.pch";
 				INFOPLIST_FILE = "SocialLib/SocialLib-Info.plist";
 				MODULE_NAME = ExampleApp;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -517,8 +519,10 @@
 				GCC_PREFIX_HEADER = "SocialLib/SocialLib-Prefix.pch";
 				INFOPLIST_FILE = "SocialLib/SocialLib-Info.plist";
 				MODULE_NAME = ExampleApp;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

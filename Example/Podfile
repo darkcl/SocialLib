@@ -7,6 +7,5 @@ end
 
 target 'SocialLib_Tests', :exclusive => true do
   pod "SocialLib", :path => "../"
-
   
 end
