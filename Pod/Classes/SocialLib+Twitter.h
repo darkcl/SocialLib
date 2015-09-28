@@ -8,6 +8,18 @@
 
 #import "SocialLib.h"
 
+typedef NS_ENUM(NSInteger, SocialLibTwitterMessageType) {
+    SocialLibTwitterMessageTypeText,
+    SocialLibTwitterMessageTypeImage
+};
+
+@protocol SocialLibTwitterMessage <SocialLibMessage>
+
+@required
+- (SocialLibTwitterMessageType)twitterMessageType;
+
+@end
+
 static NSString *kSocialLibPlatformTwitter = @"Twitter";
 
 @interface SocialLib (Twitter)

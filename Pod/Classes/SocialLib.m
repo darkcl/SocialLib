@@ -21,6 +21,32 @@ static NSMutableDictionary *supportedPlatform;
     return sharedInstance;
 }
 
++ (NSString *)imageToNSString:(UIImage *)image{
+    NSData *data = UIImagePNGRepresentation(image);
+    
+    return [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+}
+
+
++ (NSDictionary *)parametersDictionaryFromQueryString:(NSString *)queryString {
+    
+    NSMutableDictionary *md = [NSMutableDictionary dictionary];
+    
+    NSArray *queryComponents = [queryString componentsSeparatedByString:@"&"];
+    
+    for(NSString *s in queryComponents) {
+        NSArray *pair = [s componentsSeparatedByString:@"="];
+        if([pair count] != 2) continue;
+        
+        NSString *key = pair[0];
+        NSString *value = pair[1];
+        
+        md[key] = value;
+    }
+    
+    return md;
+}
+
 + (void)addPlatform:(NSString *)platform withKey:(NSString *)key{ 
     if (!supportedPlatform) {
         supportedPlatform = [[NSMutableDictionary alloc] init];

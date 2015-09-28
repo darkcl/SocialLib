@@ -1,4 +1,7 @@
 PODS:
+  - AFNetworking (1.3.4)
+  - AFOAuth1Client (1.0.0):
+    - AFNetworking (~> 1.3)
   - Bolts (1.3.0):
     - Bolts/AppLinks (= 1.3.0)
     - Bolts/Tasks (= 1.3.0)
@@ -18,26 +21,33 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.6.0):
     - FBSDKCoreKit
-  - SocialLib (0.1.0):
+  - SocialLib (0.0.1):
+    - AFNetworking
+    - AFOAuth1Client
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
     - STTwitter
   - STTwitter (0.2.2)
+  - UIActionSheet+Blocks (0.9)
 
 DEPENDENCIES:
   - SocialLib (from `../`)
+  - UIActionSheet+Blocks
 
 EXTERNAL SOURCES:
   SocialLib:
     :path: ../
 
 SPEC CHECKSUMS:
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  AFOAuth1Client: 51d32174520b54d7e15a8b3dd618a9a5b87a6344
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
   FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
   FBSDKShareKit: f474f1123791e215d0299b98b3ee92ddd9187d86
-  SocialLib: 4f039e679545a3888bd23a7f45c6839f5856f10f
+  SocialLib: f3f3ab03efd8afc7c81218fff6e072477f96af2b
   STTwitter: eb85d8770ddb0f8989f341cf41ea875e90ac6e7f
+  UIActionSheet+Blocks: e180b7dad0a721ab7f212ac9742af799008bb358
 
 COCOAPODS: 0.38.2

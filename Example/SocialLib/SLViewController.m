@@ -8,6 +8,7 @@
 
 #import "SLViewController.h"
 #import "InfoModal.h"
+#import <UIActionSheet+Blocks/UIActionSheet+Blocks.h>
 
 @interface SLViewController ()
 
@@ -55,6 +56,48 @@
                   failure:^(NSDictionary *message, NSError *error) {
                       NSLog(@"%@", error);
                   }];
+}
+
+- (IBAction)shareToTumblr:(id)sender {
+//    [SocialLib shareModal:nil
+//               toPlatform:kSocialLibPlatformTumblr
+//                  success:^(NSDictionary *message) {
+//                      NSLog(@"%@", message);
+//                  }
+//                  failure:^(NSDictionary *message, NSError *error) {
+//                      NSLog(@"%@", error);
+//                  }];
+    InfoModal *info = [[InfoModal alloc] init];
+    info.infoTitle = @"SocialLib";
+    info.infoContent = @"Share via SocialLib";
+    info.infoContentURL = @"http://darkcl.github.io/SocialLib";
+    
+    [SocialLib getTumblrBlogsWithSuccess:^(NSArray *blogs) {
+        [UIActionSheet showInView:self.view
+                        withTitle:@"Select a blog"
+                cancelButtonTitle:@"Cancel"
+           destructiveButtonTitle:nil
+                otherButtonTitles:blogs
+                         tapBlock:^(UIActionSheet * _Nonnull actionSheet, NSInteger buttonIndex) {
+                             if (buttonIndex != actionSheet.cancelButtonIndex) {
+                                 NSString *selectedBlog = [actionSheet buttonTitleAtIndex:buttonIndex];
+                                 [SocialLib setTumblrBlog:selectedBlog];
+                                 [SocialLib shareModal:info
+                                            toPlatform:kSocialLibPlatformTumblr
+                                               success:^(NSDictionary *message) {
+                                                   NSLog(@"%@", message);
+                                               }
+                                               failure:^(NSDictionary *message, NSError *error) {
+                                                   NSLog(@"%@", error);
+                                               }];
+                             }
+                         }];
+    }
+                                 failure:^(NSError *error) {
+                                     
+                                 }];
+    
+    
 }
 
 @end

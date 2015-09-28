@@ -31,13 +31,22 @@
                                     <action selector="shareToTwitter:" destination="whP-gf-Uak" eventType="touchUpInside" id="PZT-vV-qzn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ1-LE-8t6">
+                                <rect key="frame" x="246" y="361" width="109" height="30"/>
+                                <state key="normal" title="Share to Tumblr"/>
+                                <connections>
+                                    <action selector="shareToTumblr:" destination="whP-gf-Uak" eventType="touchUpInside" id="Lrd-9U-ypD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8nW-N0-JN2" firstAttribute="top" secondItem="4PV-rh-UWI" secondAttribute="bottom" constant="8" id="CBf-iu-vc9"/>
                             <constraint firstItem="4PV-rh-UWI" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="DBu-Pf-943"/>
                             <constraint firstItem="8nW-N0-JN2" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="bxi-6e-FVc"/>
+                            <constraint firstItem="RQ1-LE-8t6" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="gf4-Qs-mXL"/>
                             <constraint firstItem="4PV-rh-UWI" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="h2U-ty-ere"/>
+                            <constraint firstItem="RQ1-LE-8t6" firstAttribute="top" secondItem="8nW-N0-JN2" secondAttribute="bottom" constant="8" id="lin-BF-GM3"/>
                         </constraints>
                     </view>
                 </viewController>

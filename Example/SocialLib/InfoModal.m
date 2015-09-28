@@ -36,8 +36,19 @@
     return _infoVideoURL;
 }
 
+- (SocialLibFacebookMessageType)fbMessageType{
+    return SocialLibFacebookMessageTypeText;
+}
+
 - (NSString *)tweetContent{
     return [NSString stringWithFormat:@"%@ - %@ %@",_infoTitle, _infoContent, _infoContentURL];
 }
 
+- (SocialLibTwitterMessageType)twitterMessageType{
+    return SocialLibTwitterMessageTypeText;
+}
+
+- (SocialLibTumblrMessageType)tumblrMessageType{
+    return SocialLibTumblrMessageTypeLink;
+}
 @end

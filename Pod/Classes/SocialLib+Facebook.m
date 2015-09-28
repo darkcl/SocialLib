@@ -40,59 +40,91 @@ static SLShareFailure _fbfailureBlock;
     [FBSDKAppEvents activateApp];
 }
 
-+ (void)shareModalToFacebook:(id<SocialLibMessage>)obj
++ (void)shareModalToFacebook:(id<SocialLibFacebookMessage>)obj
                      success:(SLShareSuccess)successBlock
                      failure:(SLShareFailure)failureBlock{
     _fbsuccessBlock = successBlock;
     _fbfailureBlock = failureBlock;
-    if ([obj.class conformsToProtocol:@protocol(SocialLibMessage)]) {
-        if ([obj respondsToSelector:@selector(contentURL)] && obj.contentURL.length != 0) {
-            FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-            content.contentURL = [NSURL URLWithString:obj.contentURL];
-            
-            if ([obj respondsToSelector:@selector(title)]) {
-                content.contentTitle = obj.title;
+    if ([obj.class conformsToProtocol:@protocol(SocialLibFacebookMessage)]) {
+        SocialLibFacebookMessageType type = obj.fbMessageType;
+        switch (type) {
+            case SocialLibFacebookMessageTypeText:{
+                FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+                
+                if ([obj respondsToSelector:@selector(title)]) {
+                    content.contentTitle = obj.title;
+                }
+                
+                if ([obj respondsToSelector:@selector(thumbnailImageURL)]) {
+                    content.imageURL = [NSURL URLWithString:obj.thumbnailImageURL];
+                }
+                
+                if ([obj respondsToSelector:@selector(content)]) {
+                    content.contentDescription = obj.content;
+                }
+                
+                [FBSDKShareDialog showFromViewController:nil
+                                             withContent:content
+                                                delegate:[SocialLib sharedInstance]];
+
             }
-            
-            if ([obj respondsToSelector:@selector(thumbnailImageURL)]) {
-                content.imageURL = [NSURL URLWithString:obj.thumbnailImageURL];
+                break;
+            case SocialLibFacebookMessageTypePhoto:{
+                NSMutableArray *imagesArray = [[NSMutableArray alloc] init];
+                for (UIImage *image in obj.images) {
+                    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
+                    photo.image = image;
+                    photo.userGenerated = YES;
+                    [imagesArray addObject:photo];
+                }
+                FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+                content.photos = imagesArray;
+                [FBSDKShareDialog showFromViewController:nil
+                                             withContent:content
+                                                delegate:[SocialLib sharedInstance]];
             }
-            
-            if ([obj respondsToSelector:@selector(content)]) {
-                content.contentDescription = obj.content;
+                break;
+            case SocialLibFacebookMessageTypeVideo:{
+                FBSDKShareVideoContent *content = [[FBSDKShareVideoContent alloc] init];
+                FBSDKShareVideo *video = [[FBSDKShareVideo alloc] init];
+                video.videoURL = [NSURL URLWithString:obj.videoURL];
+                content.video = video;
+                
+                [FBSDKShareDialog showFromViewController:nil
+                                             withContent:content
+                                                delegate:[SocialLib sharedInstance]];
             }
-            
-            [FBSDKShareDialog showFromViewController:nil
-                                         withContent:content
-                                            delegate:[SocialLib sharedInstance]];
-        }else if ([obj respondsToSelector:@selector(videoURL)] && obj.videoURL.length != 0) {
-            FBSDKShareVideoContent *content = [[FBSDKShareVideoContent alloc] init];
-            FBSDKShareVideo *video = [[FBSDKShareVideo alloc] init];
-            video.videoURL = [NSURL URLWithString:obj.videoURL];
-            content.video = video;
-            
-            [FBSDKShareDialog showFromViewController:nil
-                                         withContent:content
-                                            delegate:[SocialLib sharedInstance]];
-        }else if ([obj respondsToSelector:@selector(images)] && obj.images.count != 0) {
-            NSMutableArray *imagesArray = [[NSMutableArray alloc] init];
-            for (UIImage *image in obj.images) {
-                FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
-                photo.image = image;
-                photo.userGenerated = YES;
-                [imagesArray addObject:photo];
+                break;
+            case SocialLibFacebookMessageTypeLink:{
+                FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+                content.contentURL = [NSURL URLWithString:obj.contentURL];
+                
+                if ([obj respondsToSelector:@selector(title)]) {
+                    content.contentTitle = obj.title;
+                }
+                
+                if ([obj respondsToSelector:@selector(thumbnailImageURL)]) {
+                    content.imageURL = [NSURL URLWithString:obj.thumbnailImageURL];
+                }
+                
+                if ([obj respondsToSelector:@selector(content)]) {
+                    content.contentDescription = obj.content;
+                }
+                
+                [FBSDKShareDialog showFromViewController:nil
+                                             withContent:content
+                                                delegate:[SocialLib sharedInstance]];
             }
-            FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
-            content.photos = imagesArray;
-            [FBSDKShareDialog showFromViewController:nil
-                                         withContent:content
-                                            delegate:[SocialLib sharedInstance]];
-        }else{
-            NSError *error = [NSError errorWithDomain:@"SocialLib"
-                                                 code:3
-                                             userInfo:@{NSLocalizedDescriptionKey: @"Modal doesn't have enough information"}];
-            failureBlock(nil, error);
+                break;
+            default:{
+                NSError *error = [NSError errorWithDomain:@"SocialLib"
+                                                     code:3
+                                                 userInfo:@{NSLocalizedDescriptionKey: @"Modal doesn't have enough information"}];
+                failureBlock(nil, error);
+            }
+                break;
         }
+        
     }else{
         NSError *error = [NSError errorWithDomain:@"SocialLib"
                                              code:3

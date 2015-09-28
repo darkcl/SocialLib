@@ -15,7 +15,7 @@
 static STTwitterAPI *twitter;
 static ACAccountStore *accountStore;
 static NSArray *iOSAccounts;
-static BOOL isLogin;
+static BOOL isTwitterLogin;
 static NSString *twitterToken;
 static NSString *twitterVerifier;
 
@@ -25,7 +25,7 @@ static id<SocialLibMessage> twitterShareMsg;
 
 + (void)load{
     
-    isLogin = NO;
+    isTwitterLogin = NO;
     
     [self addPlatform:kSocialLibPlatformTwitter withKey:@""];
 }
@@ -36,25 +36,6 @@ static id<SocialLibMessage> twitterShareMsg;
 
 + (void)Twitter_applicationDidBecomeActie:(UIApplication *)application{
     
-}
-
-+ (NSDictionary *)parametersDictionaryFromQueryString:(NSString *)queryString {
-    
-    NSMutableDictionary *md = [NSMutableDictionary dictionary];
-    
-    NSArray *queryComponents = [queryString componentsSeparatedByString:@"&"];
-    
-    for(NSString *s in queryComponents) {
-        NSArray *pair = [s componentsSeparatedByString:@"="];
-        if([pair count] != 2) continue;
-        
-        NSString *key = pair[0];
-        NSString *value = pair[1];
-        
-        md[key] = value;
-    }
-    
-    return md;
 }
 
 + (BOOL)Twitter_handleOpenURL:(UIApplication *)application
@@ -71,34 +52,34 @@ static id<SocialLibMessage> twitterShareMsg;
     twitterToken = d[@"oauth_token"];
     twitterVerifier = d[@"oauth_verifier"];
     
-    if (!isLogin) {
+    if (!isTwitterLogin) {
         [twitter postAccessTokenRequestWithPIN:twitterVerifier
                                   successBlock:^(NSString *oauthToken, NSString *oauthTokenSecret, NSString *userID, NSString *screenName) {
                                       
                                       [twitter verifyCredentialsWithUserSuccessBlock:^(NSString *username, NSString *userID) {
-                                          isLogin = YES;
+                                          isTwitterLogin = YES;
                                           [self shareModalToTwitter:twitterShareMsg
                                                             success:_twitterSuccessBlock
                                                             failure:_twitterFailureBlock];
                                       }
                                                                           errorBlock:^(NSError *error) {
-                                                                              isLogin = NO;
+                                                                              isTwitterLogin = NO;
                                                                               _twitterFailureBlock(nil, error);
                                                                           }];
                                       
                                   }
                                     errorBlock:^(NSError *error) {
-                                        isLogin = NO;
+                                        isTwitterLogin = NO;
                                         _twitterFailureBlock(nil, error);
                                     }];
     }
     return YES;
 }
 
-+ (void)shareModalToTwitter:(id<SocialLibMessage>)obj
++ (void)shareModalToTwitter:(id<SocialLibTwitterMessage>)obj
                     success:(SLShareSuccess)successBlock
                     failure:(SLShareFailure)failureBlock{
-    if (!isLogin) {
+    if (!isTwitterLogin) {
         NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
         NSString* consumerKey = [infoDict objectForKey:@"TwitterConsumerKey"];
         NSString* consumerSecret = [infoDict objectForKey:@"TwitterConsumerSecret"];
@@ -120,33 +101,16 @@ static id<SocialLibMessage> twitterShareMsg;
                            failureBlock(nil, error);
                        }];
     }else{
-        if ([obj respondsToSelector:@selector(tweetContent)] && obj.tweetContent.length != 0) {
+        if ([obj.class conformsToProtocol:@protocol(SocialLibTwitterMessage)]) {
+            SocialLibTwitterMessageType type = obj.twitterMessageType;
             if (obj.tweetContent.length >= 140) {
                 NSError *error = [NSError errorWithDomain:@"SocailLib"
                                                      code:4
                                                  userInfo:@{NSLocalizedDescriptionKey : @"Tweet length reach maxium character"}];
                 failureBlock(nil, error);
             }else{
-                NSString *tweetConent = obj.tweetContent;
-                NSArray *images;
-                if ([obj respondsToSelector:@selector(images)] && obj.images.count != 0) {
-                    images = obj.images;
-                    [twitter postStatusUpdate:tweetConent
-                               mediaDataArray:images
-                            possiblySensitive:nil
-                            inReplyToStatusID:nil
-                                     latitude:nil
-                                    longitude:nil
-                                      placeID:nil
-                           displayCoordinates:nil
-                          uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-                              
-                          } successBlock:^(NSDictionary *status) {
-                              successBlock(status);
-                          } errorBlock:^(NSError *error) {
-                              failureBlock(nil, error);
-                          }];
-                }else{
+                if (type == SocialLibTwitterMessageTypeText) {
+                    NSString *tweetConent = obj.tweetContent;
                     [twitter postStatusUpdate:tweetConent
                             inReplyToStatusID:nil
                                      latitude:nil
@@ -160,15 +124,32 @@ static id<SocialLibMessage> twitterShareMsg;
                                    errorBlock:^(NSError *error) {
                                        failureBlock(nil, error);
                                    }];
+                }else if (type == SocialLibTwitterMessageTypeImage) {
+                    NSString *tweetConent = obj.tweetContent;
+                    NSArray *images;
+                    if ([obj respondsToSelector:@selector(images)] && obj.images.count != 0) {
+                        images = obj.images;
+                        [twitter postStatusUpdate:tweetConent
+                                   mediaDataArray:images
+                                possiblySensitive:nil
+                                inReplyToStatusID:nil
+                                         latitude:nil
+                                        longitude:nil
+                                          placeID:nil
+                               displayCoordinates:nil
+                              uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+                                  
+                              } successBlock:^(NSDictionary *status) {
+                                  successBlock(status);
+                              } errorBlock:^(NSError *error) {
+                                  failureBlock(nil, error);
+                              }];
+                    }else{
+                    
+                    }
                 }
             }
-        }else{
-            NSError *error = [NSError errorWithDomain:@"SocailLib"
-                                                 code:5
-                                             userInfo:@{NSLocalizedDescriptionKey : @"Modal doesn't have tweet content"}];
-            failureBlock(nil, error);
         }
-        
     }
 }
 
