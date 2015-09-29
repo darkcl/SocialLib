@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/SLGlobal.h
+../../../../../Pod/Classes/Core/SLGlobal.h

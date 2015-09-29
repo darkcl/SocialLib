@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/SocialLib+Weibo.h
+../../../../../Pod/Classes/Weibo/SocialLib+Weibo.h

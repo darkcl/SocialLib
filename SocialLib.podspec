@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
 SocialLib handles sharing message to multiple social media.
 Now support twitter, facebook, tumblr, wechat (weixin) and weibo.
@@ -30,21 +30,54 @@ Now support twitter, facebook, tumblr, wechat (weixin) and weibo.
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'SocialLib' => ['Pod/Assets/*.png']
-  }
+  # s.source_files = 'Pod/Classes/**/*'
+  # s.resource_bundles = {
+  #   'SocialLib' => ['Pod/Assets/*.png']
+  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.frameworks = 'Accounts', 'ImageIO', 'SystemConfiguration', 'CoreText', 'QuartzCore', 'Security', 'UIKit', 'Foundation', 'CoreGraphics','CoreTelephony', 'SystemConfiguration', 'MobileCoreServices'
-  s.pod_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'NO' }
+
   s.libraries = 'c++', 'z', 'sqlite3', 'icucore'
-  s.dependency 'AFOAuth1Client'
-  s.dependency 'FBSDKCoreKit'
-  s.dependency 'FBSDKLoginKit'
-  s.dependency 'FBSDKShareKit'
-  s.dependency 'STTwitter'
-  s.dependency 'WeiboSDK'
-  s.dependency 'Weixin'
+  # s.dependency 'AFOAuth1Client'
+  # s.dependency 'FBSDKCoreKit'
+  # s.dependency 'FBSDKLoginKit'
+  # s.dependency 'FBSDKShareKit'
+  # s.dependency 'STTwitter'
+  # s.dependency 'WeiboSDK'
+  # s.dependency 'Weixin'
+
+  s.subspec 'Core' do |core|
+    core.source_files  = 'Pod/Classes/Core/*.{h,m}'
+  end
+
+  s.subspec 'Facebook' do |facebook|
+    facebook.source_files  = 'Pod/Classes/Facebook/*.{h,m}'
+    facebook.dependency 'FBSDKCoreKit'
+    facebook.dependency 'FBSDKLoginKit'
+    facebook.dependency 'FBSDKShareKit'
+  end
+
+  s.subspec 'Twitter' do |twitter|
+    twitter.source_files = 'Pod/Classes/Twitter/*.{h,m}'
+    twitter.dependency 'STTwitter'
+  end
+
+  s.subspec 'Tumblr' do |tumblr|
+    tumblr.source_files = 'Pod/Classes/Tumblr/*.{h,m}'
+    tumblr.dependency 'AFOAuth1Client'
+  end
+
+  s.subspec 'Weibo' do |weibo|
+    weibo.source_files = 'Pod/Classes/Weibo/*.{h,m}'
+    weibo.dependency 'WeiboSDK'
+  end
+
+  s.subspec 'Weixin' do |weixin|
+    weixin.source_files = 'Pod/Classes/Weixin/*.{h,m}'
+    weixin.dependency 'Weixin'
+  end
+
+  s.default_subspecs = 'Core', 'Facebook', 'Twitter', 'Tumblr', 'Weibo', 'Weixin'
 end

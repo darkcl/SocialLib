@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/SocialLib.h
+../../../../../Pod/Classes/Core/SocialLib.h

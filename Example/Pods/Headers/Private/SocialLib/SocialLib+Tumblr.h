@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/SocialLib+Tumblr.h
+../../../../../Pod/Classes/Tumblr/SocialLib+Tumblr.h

@@ -16,12 +16,6 @@
     "ios": "7.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "SocialLib": [
-      "Pod/Assets/*.png"
-    ]
-  },
   "frameworks": [
     "Accounts",
     "ImageIO",
@@ -36,36 +30,75 @@
     "SystemConfiguration",
     "MobileCoreServices"
   ],
-  "pod_target_xcconfig": {
-    "ONLY_ACTIVE_ARCH": "NO"
-  },
   "libraries": [
     "c++",
     "z",
     "sqlite3",
     "icucore"
   ],
-  "dependencies": {
-    "AFOAuth1Client": [
+  "default_subspecs": [
+    "Core",
+    "Facebook",
+    "Twitter",
+    "Tumblr",
+    "Weibo",
+    "Weixin"
+  ],
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Pod/Classes/Core/*.{h,m}"
+    },
+    {
+      "name": "Facebook",
+      "source_files": "Pod/Classes/Facebook/*.{h,m}",
+      "dependencies": {
+        "FBSDKCoreKit": [
 
-    ],
-    "FBSDKCoreKit": [
+        ],
+        "FBSDKLoginKit": [
 
-    ],
-    "FBSDKLoginKit": [
+        ],
+        "FBSDKShareKit": [
 
-    ],
-    "FBSDKShareKit": [
+        ]
+      }
+    },
+    {
+      "name": "Twitter",
+      "source_files": "Pod/Classes/Twitter/*.{h,m}",
+      "dependencies": {
+        "STTwitter": [
 
-    ],
-    "STTwitter": [
+        ]
+      }
+    },
+    {
+      "name": "Tumblr",
+      "source_files": "Pod/Classes/Tumblr/*.{h,m}",
+      "dependencies": {
+        "AFOAuth1Client": [
 
-    ],
-    "WeiboSDK": [
+        ]
+      }
+    },
+    {
+      "name": "Weibo",
+      "source_files": "Pod/Classes/Weibo/*.{h,m}",
+      "dependencies": {
+        "WeiboSDK": [
 
-    ],
-    "Weixin": [
+        ]
+      }
+    },
+    {
+      "name": "Weixin",
+      "source_files": "Pod/Classes/Weixin/*.{h,m}",
+      "dependencies": {
+        "Weixin": [
 
-    ]
-  }
+        ]
+      }
+    }
+  ]
 }

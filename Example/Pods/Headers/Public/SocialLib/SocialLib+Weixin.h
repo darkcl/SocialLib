@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/SocialLib+Weixin.h
+../../../../../Pod/Classes/Weixin/SocialLib+Weixin.h
