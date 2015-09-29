@@ -38,7 +38,7 @@ Now support twitter and facebook.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.frameworks = 'Accounts', 'ImageIO', 'SystemConfiguration', 'CoreText', 'QuartzCore', 'Security', 'UIKit', 'Foundation', 'CoreGraphics','CoreTelephony'
-#s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-all_load -l"c++" -l"icucore" -l"sqlite3" -l"z"' }
+  s.pod_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'NO' }
   s.libraries = 'c++', 'z', 'sqlite3', 'icucore'
   s.dependency 'AFOAuth1Client'
   s.dependency 'FBSDKCoreKit'
@@ -46,4 +46,5 @@ Now support twitter and facebook.
   s.dependency 'FBSDKShareKit'
   s.dependency 'STTwitter'
   s.dependency 'WeiboSDK'
+  s.dependency 'Weixin'
 end

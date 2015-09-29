@@ -28,8 +28,10 @@ PODS:
     - FBSDKShareKit
     - STTwitter
     - WeiboSDK
+    - Weixin
   - STTwitter (0.2.2)
   - WeiboSDK (3.1.1)
+  - Weixin (1.5)
 
 DEPENDENCIES:
   - SocialLib (from `../`)
@@ -45,8 +47,9 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
   FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
   FBSDKShareKit: f474f1123791e215d0299b98b3ee92ddd9187d86
-  SocialLib: 54e37274d7c51d0262a0220c7475377d4a0cf234
+  SocialLib: f1e0b959a4b470968d4f6d59b254926b3301de30
   STTwitter: eb85d8770ddb0f8989f341cf41ea875e90ac6e7f
   WeiboSDK: ebdd7db58670dc0f8a4389a0b9b3069bcbc1d034
+  Weixin: 078167ff244c56fa8352506420b6328a13a184a1
 
 COCOAPODS: 0.38.2

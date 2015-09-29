@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SocialLib/SocialLib.h>
 
-@interface InfoModal : NSObject <SocialLibFacebookMessage, SocialLibTwitterMessage, SocialLibTumblrMessage, SocialLibWeiboMessage>{
+@interface InfoModal : NSObject <SocialLibFacebookMessage, SocialLibTwitterMessage, SocialLibTumblrMessage, SocialLibWeiboMessage, SocialLibWeixinMessage>{
     
 }
 

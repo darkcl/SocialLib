@@ -55,4 +55,8 @@
 - (SocialLibWeiboMessageType)weiboMessageType{
     return SocialLibWeiboMessageTypeText;
 }
+
+- (SocialLibWeixinMessageType)weixinMessageType{
+    return SocialLibWeixinMessageTypeText;
+}
 @end

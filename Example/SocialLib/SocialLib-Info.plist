@@ -23,6 +23,12 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx{ENTER YOUR APP ID}</string>
+			</array>
+		</dict>
+		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
@@ -137,5 +143,9 @@
 	</array>
 	<key>WeiboAppID</key>
 	<string>ENTER YOUR APP ID</string>
+	<key>WeixinAppID</key>
+	<string>ENTER YOUR APP ID</string>
+	<key>WeixinAppName</key>
+	<string>ENTER YOUR APP NAME</string>
 </dict>
 </plist>
