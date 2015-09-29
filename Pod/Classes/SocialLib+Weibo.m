@@ -29,7 +29,7 @@
     
 }
 
-+ (void)shareModalToWeibo:(id<SocialLibFacebookMessage>)obj
++ (void)shareModalToWeibo:(id<SocialLibWeiboMessage>)obj
                   success:(SLShareSuccess)successBlock
                   failure:(SLShareFailure)failureBlock{
     
