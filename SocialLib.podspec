@@ -54,6 +54,7 @@ Now support twitter, facebook, tumblr, wechat (weixin) and weibo.
 
   s.subspec 'Facebook' do |facebook|
     facebook.source_files  = 'Pod/Classes/Facebook/*.{h,m}'
+    facebook.dependency 'SocialLib/Core'
     facebook.dependency 'FBSDKCoreKit'
     facebook.dependency 'FBSDKLoginKit'
     facebook.dependency 'FBSDKShareKit'
@@ -61,21 +62,25 @@ Now support twitter, facebook, tumblr, wechat (weixin) and weibo.
 
   s.subspec 'Twitter' do |twitter|
     twitter.source_files = 'Pod/Classes/Twitter/*.{h,m}'
+    twitter.dependency 'SocialLib/Core'
     twitter.dependency 'STTwitter'
   end
 
   s.subspec 'Tumblr' do |tumblr|
     tumblr.source_files = 'Pod/Classes/Tumblr/*.{h,m}'
+    tumblr.dependency 'SocialLib/Core'
     tumblr.dependency 'AFOAuth1Client'
   end
 
   s.subspec 'Weibo' do |weibo|
     weibo.source_files = 'Pod/Classes/Weibo/*.{h,m}'
+    weibo.dependency 'SocialLib/Core'
     weibo.dependency 'WeiboSDK'
   end
 
   s.subspec 'Weixin' do |weixin|
     weixin.source_files = 'Pod/Classes/Weixin/*.{h,m}'
+    weixin.dependency 'SocialLib/Core'
     weixin.dependency 'Weixin'
   end
 

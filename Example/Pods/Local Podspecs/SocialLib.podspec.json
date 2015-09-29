@@ -53,6 +53,9 @@
       "name": "Facebook",
       "source_files": "Pod/Classes/Facebook/*.{h,m}",
       "dependencies": {
+        "SocialLib/Core": [
+
+        ],
         "FBSDKCoreKit": [
 
         ],
@@ -68,6 +71,9 @@
       "name": "Twitter",
       "source_files": "Pod/Classes/Twitter/*.{h,m}",
       "dependencies": {
+        "SocialLib/Core": [
+
+        ],
         "STTwitter": [
 
         ]
@@ -77,6 +83,9 @@
       "name": "Tumblr",
       "source_files": "Pod/Classes/Tumblr/*.{h,m}",
       "dependencies": {
+        "SocialLib/Core": [
+
+        ],
         "AFOAuth1Client": [
 
         ]
@@ -86,6 +95,9 @@
       "name": "Weibo",
       "source_files": "Pod/Classes/Weibo/*.{h,m}",
       "dependencies": {
+        "SocialLib/Core": [
+
+        ],
         "WeiboSDK": [
 
         ]
@@ -95,6 +107,9 @@
       "name": "Weixin",
       "source_files": "Pod/Classes/Weixin/*.{h,m}",
       "dependencies": {
+        "SocialLib/Core": [
+
+        ],
         "Weixin": [
 
         ]
