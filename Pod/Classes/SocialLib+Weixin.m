@@ -6,8 +6,9 @@
 //
 //
 
-#import "SocialLib+Weixin.h"
 #import <WXApi.h>
+
+#import "SocialLib+Weixin.h"
 
 @implementation SocialLib (Weixin)
 

@@ -32,7 +32,9 @@
     "UIKit",
     "Foundation",
     "CoreGraphics",
-    "CoreTelephony"
+    "CoreTelephony",
+    "SystemConfiguration",
+    "MobileCoreServices"
   ],
   "pod_target_xcconfig": {
     "ONLY_ACTIVE_ARCH": "NO"

@@ -37,7 +37,7 @@ Now support twitter and facebook.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.frameworks = 'Accounts', 'ImageIO', 'SystemConfiguration', 'CoreText', 'QuartzCore', 'Security', 'UIKit', 'Foundation', 'CoreGraphics','CoreTelephony'
+  s.frameworks = 'Accounts', 'ImageIO', 'SystemConfiguration', 'CoreText', 'QuartzCore', 'Security', 'UIKit', 'Foundation', 'CoreGraphics','CoreTelephony', 'SystemConfiguration', 'MobileCoreServices'
   s.pod_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'NO' }
   s.libraries = 'c++', 'z', 'sqlite3', 'icucore'
   s.dependency 'AFOAuth1Client'

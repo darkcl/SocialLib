@@ -6,8 +6,9 @@
 //
 //
 
-#import "SocialLib+Weibo.h"
 #import <WeiboSDK.h>
+#import "SocialLib+Weibo.h"
+
 
 @implementation SocialLib (Weibo)
 

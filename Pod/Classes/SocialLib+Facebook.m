@@ -6,10 +6,10 @@
 //
 //
 
-#import "SocialLib+Facebook.h"
-
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
+
+#import "SocialLib+Facebook.h"
 
 @implementation SocialLib (Facebook)
 
