@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PV-rh-UWI">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PV-rh-UWI">
                                 <rect key="frame" x="236" y="285" width="128" height="30"/>
                                 <state key="normal" title="Share to Facebook"/>
                                 <connections>
                                     <action selector="shareToFacebook:" destination="whP-gf-Uak" eventType="touchUpInside" id="8ls-LI-jsq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nW-N0-JN2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nW-N0-JN2">
                                 <rect key="frame" x="246" y="323" width="109" height="30"/>
                                 <state key="normal" title="Share to Twitter"/>
                                 <connections>
@@ -38,12 +37,23 @@
                                     <action selector="shareToTumblr:" destination="whP-gf-Uak" eventType="touchUpInside" id="Lrd-9U-ypD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6o-4T-b71">
+                                <rect key="frame" x="248" y="398" width="105" height="30"/>
+                                <state key="normal" title="Share to Weibo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareToWeibo:" destination="whP-gf-Uak" eventType="touchUpInside" id="hmT-nG-Lwe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8nW-N0-JN2" firstAttribute="top" secondItem="4PV-rh-UWI" secondAttribute="bottom" constant="8" id="CBf-iu-vc9"/>
                             <constraint firstItem="4PV-rh-UWI" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="DBu-Pf-943"/>
+                            <constraint firstItem="v6o-4T-b71" firstAttribute="top" secondItem="RQ1-LE-8t6" secondAttribute="bottom" constant="8" id="RLC-Y6-UpZ"/>
                             <constraint firstItem="8nW-N0-JN2" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="bxi-6e-FVc"/>
+                            <constraint firstAttribute="centerX" secondItem="v6o-4T-b71" secondAttribute="centerX" id="er2-U8-pIN"/>
                             <constraint firstItem="RQ1-LE-8t6" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="gf4-Qs-mXL"/>
                             <constraint firstItem="4PV-rh-UWI" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="h2U-ty-ere"/>
                             <constraint firstItem="RQ1-LE-8t6" firstAttribute="top" secondItem="8nW-N0-JN2" secondAttribute="bottom" constant="8" id="lin-BF-GM3"/>

@@ -22,6 +22,10 @@ static NSString *kSocialLibPlatformWeibo = @"Weibo";
 
 @end
 
-@interface SocialLib (Weibo)
+@protocol WeiboSDKDelegate;
+
+@interface SocialLib (Weibo) <WeiboSDKDelegate>
+
++ (void)text;
 
 @end

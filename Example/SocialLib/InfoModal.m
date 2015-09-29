@@ -51,4 +51,8 @@
 - (SocialLibTumblrMessageType)tumblrMessageType{
     return SocialLibTumblrMessageTypeLink;
 }
+
+- (SocialLibWeiboMessageType)weiboMessageType{
+    return SocialLibWeiboMessageTypeText;
+}
 @end

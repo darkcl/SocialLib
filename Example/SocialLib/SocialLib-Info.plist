@@ -23,6 +23,16 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb{ENTER YOUR APP ID}</string>
+			</array>
+		</dict>
+		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>sociallibdemo-tumblr</string>
@@ -92,14 +102,14 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>TwitterCallbackURL</key>
-	<string>sociallibdemo</string>
 	<key>TumblrCallbackURL</key>
 	<string>sociallibdemo-tumblr</string>
 	<key>TumblrConsumerKey</key>
 	<string>AVhi1GdlnzZgvfQmOpPYNzJOpPItQUoquQ1nQlmisbAm6GacYI</string>
 	<key>TumblrConsumerSecret</key>
 	<string>W9iDjgNTwz1O2uXNgcGyzVLgQMLkyNuw4SXYb6SHt2P77DoIY0</string>
+	<key>TwitterCallbackURL</key>
+	<string>sociallibdemo</string>
 	<key>TwitterConsumerKey</key>
 	<string>VR5s6BaU8LlgNkYtR7UTa5YM8</string>
 	<key>TwitterConsumerSecret</key>
@@ -125,5 +135,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>WeiboAppID</key>
+	<string>ENTER YOUR APP ID</string>
 </dict>
 </plist>
