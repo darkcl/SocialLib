@@ -1,8 +1,8 @@
 {
   "name": "SocialLib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "SocialLib handles sharing message to multiple social media.",
-  "description": "SocialLib handles sharing message to multiple social media.\nNow support twitter and facebook.",
+  "description": "SocialLib handles sharing message to multiple social media.\nNow support twitter, facebook, tumblr, wechat (weixin) and weibo.",
   "homepage": "https://github.com/darkcl/SocialLib",
   "license": "MIT",
   "authors": {
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/darkcl/SocialLib.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "7.0"

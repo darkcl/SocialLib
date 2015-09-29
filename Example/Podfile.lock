@@ -21,7 +21,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.6.0):
     - FBSDKCoreKit
-  - SocialLib (0.0.1):
+  - SocialLib (0.0.2):
     - AFOAuth1Client
     - FBSDKCoreKit
     - FBSDKLoginKit
@@ -47,7 +47,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
   FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
   FBSDKShareKit: f474f1123791e215d0299b98b3ee92ddd9187d86
-  SocialLib: afe50e36abdc7247d508d12da309d1c0412462fa
+  SocialLib: ffe3fcdf0044f557e2bd6e55fa0d4e014fa67d39
   STTwitter: eb85d8770ddb0f8989f341cf41ea875e90ac6e7f
   WeiboSDK: ebdd7db58670dc0f8a4389a0b9b3069bcbc1d034
   Weixin: 078167ff244c56fa8352506420b6328a13a184a1

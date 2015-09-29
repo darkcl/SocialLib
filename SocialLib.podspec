@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SocialLib"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.summary          = "SocialLib handles sharing message to multiple social media."
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
 SocialLib handles sharing message to multiple social media.
-Now support twitter and facebook.
+Now support twitter, facebook, tumblr, wechat (weixin) and weibo.
                        DESC
 
   s.homepage         = "https://github.com/darkcl/SocialLib"
