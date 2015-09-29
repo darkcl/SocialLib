@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8EADCD1BBA341B004F9926 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EADCC1BBA341B004F9926 /* UIActionSheet+Blocks.m */; };
 		5277AC79A29B23F42EC7858C /* libPods-SocialLib_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 719668BA0D824636C1D62815 /* libPods-SocialLib_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -21,8 +22,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		7496F25D1BB7F2A500E85F03 /* InfoModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7496F25C1BB7F2A500E85F03 /* InfoModal.m */; settings = {ASSET_TAGS = (); }; };
-		7496F2671BB81FDB00E85F03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7496F2661BB81FDB00E85F03 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7496F25D1BB7F2A500E85F03 /* InfoModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7496F25C1BB7F2A500E85F03 /* InfoModal.m */; };
+		7496F2671BB81FDB00E85F03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7496F2661BB81FDB00E85F03 /* LaunchScreen.storyboard */; };
 		7859117A236BF8E6F0423BBB /* libPods-SocialLib_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EFB28192E65555E8614B3F /* libPods-SocialLib_Tests.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E8EADCB1BBA341B004F9926 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		0E8EADCC1BBA341B004F9926 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		1A73E63313DB7D3A18968238 /* Pods-SocialLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLib_Tests/Pods-SocialLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3422DE9C7C5AA4A866256431 /* SocialLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SocialLib.podspec; path = ../SocialLib.podspec; sourceTree = "<group>"; };
 		4D53B3AF4534953400EEB464 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 		6003F593195388D20070C39A /* Example for SocialLib */ = {
 			isa = PBXGroup;
 			children = (
+				0E8EADCB1BBA341B004F9926 /* UIActionSheet+Blocks.h */,
+				0E8EADCC1BBA341B004F9926 /* UIActionSheet+Blocks.m */,
 				6003F59C195388D20070C39A /* SLAppDelegate.h */,
 				6003F59D195388D20070C39A /* SLAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -373,6 +378,7 @@
 				6003F59E195388D20070C39A /* SLAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* SLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				0E8EADCD1BBA341B004F9926 /* UIActionSheet+Blocks.m in Sources */,
 				7496F25D1BB7F2A500E85F03 /* InfoModal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +504,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialLib/SocialLib-Prefix.pch";
 				INFOPLIST_FILE = "SocialLib/SocialLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MODULE_NAME = ExampleApp;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +525,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialLib/SocialLib-Prefix.pch";
 				INFOPLIST_FILE = "SocialLib/SocialLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MODULE_NAME = ExampleApp;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

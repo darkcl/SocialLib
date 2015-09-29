@@ -21,7 +21,7 @@ static NSMutableDictionary *supportedPlatform;
     return sharedInstance;
 }
 
-+ (NSString *)imageToNSString:(UIImage *)image{
++ (NSString *)imageToString:(UIImage *)image{
     NSData *data = UIImagePNGRepresentation(image);
     
     return [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];

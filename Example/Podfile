@@ -2,7 +2,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'SocialLib_Example', :exclusive => true do
   pod "SocialLib", :path => "../"
-  pod 'UIActionSheet+Blocks'
 end
 
 target 'SocialLib_Tests', :exclusive => true do

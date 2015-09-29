@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "182D67A6EC9BA0217082AEDD"
+               BlueprintIdentifier = "1A07D301C8FFB569C7882E5D"
                BuildableName = "libSocialLib.a"
                BlueprintName = "SocialLib"
                ReferencedContainer = "container:Pods.xcodeproj">

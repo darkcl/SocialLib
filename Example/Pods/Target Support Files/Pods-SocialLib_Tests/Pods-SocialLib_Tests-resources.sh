@@ -58,11 +58,9 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "WeiboSDK/libWeiboSDK/WeiboSDK.bundle"
   install_resource "${BUILT_PRODUCTS_DIR}/SocialLib.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "WeiboSDK/libWeiboSDK/WeiboSDK.bundle"
   install_resource "${BUILT_PRODUCTS_DIR}/SocialLib.bundle"
 fi
 

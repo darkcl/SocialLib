@@ -21,7 +21,7 @@ static NSString *twitterVerifier;
 
 static SLShareSuccess _twitterSuccessBlock;
 static SLShareFailure _twitterFailureBlock;
-static id<SocialLibMessage> twitterShareMsg;
+static id<SocialLibTwitterMessage> twitterShareMsg;
 
 + (void)load{
     

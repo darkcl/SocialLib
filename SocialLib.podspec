@@ -45,6 +45,4 @@ Now support twitter and facebook.
   s.dependency 'FBSDKLoginKit'
   s.dependency 'FBSDKShareKit'
   s.dependency 'STTwitter'
-  s.dependency 'Weixin'
-  s.dependency 'WeiboSDK'
 end
