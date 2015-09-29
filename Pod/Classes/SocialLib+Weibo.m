@@ -14,4 +14,25 @@
     [self addPlatform:kSocialLibPlatformWeibo withKey:@""];
 }
 
++ (BOOL)connectWeiboWithApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    return YES;
+}
+
++ (BOOL)Weibo_handleOpenURL:(UIApplication *)application
+                    openURL:(NSURL *)url
+          sourceApplication:(NSString *)sourceApplication
+                 annotation:(id)annotation{
+    return YES;
+}
+
++ (void)Weibo_applicationDidBecomeActie:(UIApplication *)application{
+    
+}
+
++ (void)shareModalToWeibo:(id<SocialLibFacebookMessage>)obj
+                  success:(SLShareSuccess)successBlock
+                  failure:(SLShareFailure)failureBlock{
+    
+}
+
 @end

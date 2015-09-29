@@ -17,4 +17,5 @@
 #import <SocialLib/SocialLib+Facebook.h>
 #import <SocialLib/SocialLib+Twitter.h>
 #import <SocialLib/SocialLib+Tumblr.h>
+#import <SocialLib/SocialLib+Weibo.h>
 #endif

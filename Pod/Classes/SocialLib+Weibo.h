@@ -8,7 +8,19 @@
 
 #import "SocialLib.h"
 
-static NSString *kSocialLibPlatformTwitter = @"Weibo";
+typedef NS_ENUM(NSInteger, SocialLibWeiboMessageType) {
+    SocialLibWeiboMessageTypeText,
+    SocialLibWeiboMessageTypeImage
+};
+
+static NSString *kSocialLibPlatformWeibo = @"Weibo";
+
+@protocol SocialLibWeiboMessage <SocialLibMessage>
+
+@required
+- (SocialLibWeiboMessageType)weiboMessageType;
+
+@end
 
 @interface SocialLib (Weibo)
 
