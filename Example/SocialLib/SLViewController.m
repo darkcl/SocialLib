@@ -73,27 +73,29 @@
     info.infoContentURL = @"http://darkcl.github.io/SocialLib";
     
     [SocialLib getTumblrBlogsWithSuccess:^(NSArray *blogs) {
-//        [UIActionSheet pres]
-        
-//        [UIActionSheet showInView:self.view
-//                        withTitle:@"Select a blog"
-//                cancelButtonTitle:@"Cancel"
-//           destructiveButtonTitle:nil
-//                otherButtonTitles:blogs
-//                         tapBlock:^(UIActionSheet * _Nonnull actionSheet, NSInteger buttonIndex) {
-//                             if (buttonIndex != actionSheet.cancelButtonIndex) {
-//                                 NSString *selectedBlog = [actionSheet buttonTitleAtIndex:buttonIndex];
-//                                 [SocialLib setTumblrBlog:selectedBlog];
-//                                 [SocialLib shareModal:info
-//                                            toPlatform:kSocialLibPlatformTumblr
-//                                               success:^(NSDictionary *message) {
-//                                                   NSLog(@"%@", message);
-//                                               }
-//                                               failure:^(NSDictionary *message, NSError *error) {
-//                                                   NSLog(@"%@", error);
-//                                               }];
-//                             }
-//                         }];
+        [UIActionSheet presentOnView:self.view
+                           withTitle:@"Select Blog"
+                        cancelButton:@"Cancel"
+                   destructiveButton:nil
+                        otherButtons:blogs
+                            onCancel:^(UIActionSheet *actionSheet) {
+                                
+                            }
+                       onDestructive:^(UIActionSheet *actionSheet) {
+                           
+                       }
+                     onClickedButton:^(UIActionSheet *actionSheet, NSUInteger buttonIndex) {
+                         NSString *selectedBlog = [actionSheet buttonTitleAtIndex:buttonIndex];
+                                                          [SocialLib setTumblrBlog:selectedBlog];
+                                                          [SocialLib shareModal:info
+                                                                     toPlatform:kSocialLibPlatformTumblr
+                                                                        success:^(NSDictionary *message) {
+                                                                            NSLog(@"%@", message);
+                                                                        }
+                                                                        failure:^(NSDictionary *message, NSError *error) {
+                                                                            NSLog(@"%@", error);
+                                                                        }];
+                     }];
     }
                                  failure:^(NSError *error) {
                                      

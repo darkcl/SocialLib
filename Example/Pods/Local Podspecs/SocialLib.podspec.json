@@ -22,7 +22,24 @@
       "Pod/Assets/*.png"
     ]
   },
-  "frameworks": "Accounts",
+  "frameworks": [
+    "Accounts",
+    "ImageIO",
+    "SystemConfiguration",
+    "CoreText",
+    "QuartzCore",
+    "Security",
+    "UIKit",
+    "Foundation",
+    "CoreGraphics",
+    "CoreTelephony"
+  ],
+  "libraries": [
+    "c++",
+    "z",
+    "sqlite3",
+    "icucore"
+  ],
   "dependencies": {
     "AFOAuth1Client": [
 
@@ -37,6 +54,9 @@
 
     ],
     "STTwitter": [
+
+    ],
+    "WeiboSDK": [
 
     ]
   }

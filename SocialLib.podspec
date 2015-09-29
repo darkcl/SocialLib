@@ -30,7 +30,6 @@ Now support twitter and facebook.
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-#s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 armv7s i386 x86_64' }
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
     'SocialLib' => ['Pod/Assets/*.png']
@@ -38,11 +37,13 @@ Now support twitter and facebook.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.frameworks = 'Accounts'
-
+  s.frameworks = 'Accounts', 'ImageIO', 'SystemConfiguration', 'CoreText', 'QuartzCore', 'Security', 'UIKit', 'Foundation', 'CoreGraphics','CoreTelephony'
+#s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-all_load -l"c++" -l"icucore" -l"sqlite3" -l"z"' }
+  s.libraries = 'c++', 'z', 'sqlite3', 'icucore'
   s.dependency 'AFOAuth1Client'
   s.dependency 'FBSDKCoreKit'
   s.dependency 'FBSDKLoginKit'
   s.dependency 'FBSDKShareKit'
   s.dependency 'STTwitter'
+  s.dependency 'WeiboSDK'
 end
