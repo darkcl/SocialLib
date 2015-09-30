@@ -62,12 +62,33 @@ static enum WXScene weixinScene;
 
 + (WXMediaMessage *)messageToShare:(id<SocialLibWeixinMessage>)weixinMessage
 {
+    SocialLibWeixinMessageType type = weixinMessage.weixinMessageType;
     WXMediaMessage *message = [WXMediaMessage message];
-    message.title = weixinMessage.title;
-    message.description = weixinMessage.content;
-    WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = weixinMessage.contentURL;
-    message.mediaObject = ext;
+    switch (type) {
+        case SocialLibWeixinMessageTypeText: {
+            message.description = weixinMessage.content;
+            break;
+        }
+        case SocialLibWeixinMessageTypeImage: {
+            WXImageObject *imageObj = [WXImageObject object];
+            imageObj.imageData = UIImagePNGRepresentation(weixinMessage.images[0]);
+            message.mediaObject = imageObj;
+            break;
+        }
+        case SocialLibWeixinMessageTypeLink: {
+            message.title = weixinMessage.title;
+            message.description = weixinMessage.content;
+            WXWebpageObject *ext = [WXWebpageObject object];
+            ext.webpageUrl = weixinMessage.contentURL;
+            message.mediaObject = ext;
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+    
+    
     return message;
 }
 

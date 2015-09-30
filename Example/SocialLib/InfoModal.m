@@ -57,6 +57,6 @@
 }
 
 - (SocialLibWeixinMessageType)weixinMessageType{
-    return SocialLibWeixinMessageTypeText;
+    return SocialLibWeixinMessageTypeLink;
 }
 @end
