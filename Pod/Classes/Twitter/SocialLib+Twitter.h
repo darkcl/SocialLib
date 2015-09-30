@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, SocialLibTwitterMessageType) {
 
 @required
 - (SocialLibTwitterMessageType)twitterMessageType;
+- (NSString *)tweetContent;
 
 @end
 
