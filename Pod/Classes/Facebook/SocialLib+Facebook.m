@@ -50,19 +50,7 @@ static SLShareFailure _fbfailureBlock;
         switch (type) {
             case SocialLibFacebookMessageTypeText:{
                 FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-                
-                if ([obj respondsToSelector:@selector(title)]) {
-                    content.contentTitle = obj.title;
-                }
-                
-                if ([obj respondsToSelector:@selector(thumbnailImageURL)]) {
-                    content.imageURL = [NSURL URLWithString:obj.thumbnailImageURL];
-                }
-                
-                if ([obj respondsToSelector:@selector(content)]) {
-                    content.contentDescription = obj.content;
-                }
-                
+                content.contentDescription = obj.content;
                 [FBSDKShareDialog showFromViewController:nil
                                              withContent:content
                                                 delegate:[SocialLib sharedInstance]];
@@ -144,11 +132,7 @@ static SLShareFailure _fbfailureBlock;
 }
 
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer{
-    NSError *error = [NSError errorWithDomain:@"SocialLib"
-                                         code:1
-                                     userInfo:@{NSLocalizedDescriptionKey : @"Facebook share did cancel"}];
-    
-    _fbfailureBlock(nil, error);
+    _fbsuccessBlock(nil);
 }
 
 @end

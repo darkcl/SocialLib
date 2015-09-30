@@ -37,7 +37,7 @@
 }
 
 - (SocialLibFacebookMessageType)fbMessageType{
-    return SocialLibFacebookMessageTypeText;
+    return SocialLibFacebookMessageTypeLink;
 }
 
 - (NSString *)tweetContent{
