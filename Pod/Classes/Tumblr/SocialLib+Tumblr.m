@@ -10,6 +10,9 @@
 #import "AFOAuth1Client.h"
 #import "AFJSONRequestOperation.h"
 
+typedef void(^SLTumblrAuthSuccess)(void);
+typedef void(^SLTumblrAuthFailure)(NSError *error);
+
 @implementation SocialLib (Tumblr)
 
 static AFOAuth1Client *tumblrClient;
