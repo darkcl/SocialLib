@@ -166,8 +166,8 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 <li>In Xcode right-click your .plist file and choose "Open As Source Code".</li>
 <li>Copy &amp; Paste the XML snippet into the body of your file <code>(&lt;key&gt;CFBundleURLTypes&lt;/key&gt;
 &lt;array&gt;...&lt;/array&gt;)</code>.</li>
-<li>Replace {URL Scheme} to what you want:</li>
-</ol>
+<li>
+<p>Replace {URL Scheme} to what you want:</p>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dict</span>&gt;
     &lt;<span class="pl-ent">key</span>&gt;CFBundleURLSchemes&lt;/<span class="pl-ent">key</span>&gt;
@@ -175,19 +175,17 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
         &lt;<span class="pl-ent">string</span>&gt;{URL Scheme}&lt;/<span class="pl-ent">string</span>&gt;
     &lt;/<span class="pl-ent">array</span>&gt;
 &lt;/<span class="pl-ent">dict</span>&gt;</pre></div>
-
-<ol>
+</li>
 <li>Add following lines into body of your file <code>(&lt;dict&gt;...&lt;/dict&gt;)</code>
 </li>
-<li>Replace:
+<li>
+<p>Replace:</p>
 
 <ul>
 <li>{URL Scheme} with the same URL Scheme as above.</li>
 <li>{Twitter Consumer Key} with your Twitter App Cosumer key - <a href="https://apps.twitter.com">Register Here</a>.</li>
 <li>{Twitter Consumer Secret} with your Twitter App Cosumer Secret - <a href="https://apps.twitter.com">Register Here</a>.</li>
 </ul>
-</li>
-</ol>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">key</span>&gt;TwitterCallbackURL&lt;/<span class="pl-ent">key</span>&gt;
 &lt;<span class="pl-ent">string</span>&gt;{URL Scheme}&lt;/<span class="pl-ent">string</span>&gt;
@@ -197,6 +195,8 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 &lt;<span class="pl-ent">string</span>&gt;{Twitter Consumer Secret}&lt;/<span class="pl-ent">string</span>&gt;</pre></div>
 
 <p><em>For Twitter application, you must have a valid callback url, otherwise the sharing will not work.</em></p>
+</li>
+</ol>
 
 <h3>
 <a id="tumblr-setup" class="anchor" href="#tumblr-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tumblr Setup</h3>
@@ -205,8 +205,8 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 <li>In Xcode right-click your .plist file and choose "Open As Source Code".</li>
 <li>Copy &amp; Paste the XML snippet into the body of your file <code>(&lt;key&gt;CFBundleURLTypes&lt;/key&gt;
 &lt;array&gt;...&lt;/array&gt;)</code>.</li>
-<li>Replace {URL Scheme} to what you want, must be unique:</li>
-</ol>
+<li>
+<p>Replace {URL Scheme} to what you want, must be unique:</p>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dict</span>&gt;
     &lt;<span class="pl-ent">key</span>&gt;CFBundleURLSchemes&lt;/<span class="pl-ent">key</span>&gt;
@@ -214,19 +214,16 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
         &lt;<span class="pl-ent">string</span>&gt;{URL Scheme}&lt;/<span class="pl-ent">string</span>&gt;
     &lt;/<span class="pl-ent">array</span>&gt;
 &lt;/<span class="pl-ent">dict</span>&gt;</pre></div>
-
-<ol>
-<li>Add following lines into body of your file <code>(&lt;dict&gt;...&lt;/dict&gt;)</code>
 </li>
-<li>Replace:
+<li><p>Add following lines into body of your file <code>(&lt;dict&gt;...&lt;/dict&gt;)</code></p></li>
+<li>
+<p>Replace:</p>
 
 <ul>
 <li>{URL Scheme} with the same URL Scheme as above.</li>
 <li>{Tumblr Consumer Key} with your Tumblr App Cosumer key - <a href="https://www.tumblr.com/oauth/apps">Register Here</a>.</li>
 <li>{Tumblr Consumer Secret} with your Tumblr App Cosumer Secret - <a href="https://www.tumblr.com/oauth/apps">Register Here</a>.</li>
 </ul>
-</li>
-</ol>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">key</span>&gt;TumblrCallbackURL&lt;/<span class="pl-ent">key</span>&gt;
 &lt;<span class="pl-ent">string</span>&gt;{URL Scheme}&lt;/<span class="pl-ent">string</span>&gt;
@@ -234,6 +231,8 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 &lt;<span class="pl-ent">string</span>&gt;{Tumblr Consumer Key}&lt;/<span class="pl-ent">string</span>&gt;
 &lt;<span class="pl-ent">key</span>&gt;TumblrConsumerSecret&lt;/<span class="pl-ent">key</span>&gt;
 &lt;<span class="pl-ent">string</span>&gt;{Tumblr Consumer Secret}&lt;/<span class="pl-ent">string</span>&gt;</pre></div>
+</li>
+</ol>
 
 <h3>
 <a id="weibo-setup" class="anchor" href="#weibo-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Weibo Setup</h3>
@@ -242,8 +241,8 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 <li>In Xcode right-click your .plist file and choose "Open As Source Code".</li>
 <li>Copy &amp; Paste the XML snippet into the body of your file <code>(&lt;key&gt;CFBundleURLTypes&lt;/key&gt;
 &lt;array&gt;...&lt;/array&gt;)</code>.</li>
-<li>Replace {WEIBO API ID} with your Weibo App ID:</li>
-</ol>
+<li>
+<p>Replace {WEIBO API ID} with your Weibo App ID:</p>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dict</span>&gt;
     &lt;<span class="pl-ent">key</span>&gt;CFBundleTypeRole&lt;/<span class="pl-ent">key</span>&gt;
@@ -255,20 +254,19 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
         &lt;<span class="pl-ent">string</span>&gt;{WEIBO API ID}&lt;/<span class="pl-ent">string</span>&gt;
     &lt;/<span class="pl-ent">array</span>&gt;
 &lt;/<span class="pl-ent">dict</span>&gt;</pre></div>
-
-<ol>
-<li>Add following lines into body of your file <code>(&lt;dict&gt;...&lt;/dict&gt;)</code>
 </li>
-<li>Replace:
+<li><p>Add following lines into body of your file <code>(&lt;dict&gt;...&lt;/dict&gt;)</code></p></li>
+<li>
+<p>Replace:</p>
 
 <ul>
 <li>{WEIBO API ID} with your Weibo App ID.</li>
 </ul>
-</li>
-</ol>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">key</span>&gt;WeiboAppID&lt;/<span class="pl-ent">key</span>&gt;
 &lt;<span class="pl-ent">string</span>&gt;{WEIBO API ID}&lt;/<span class="pl-ent">string</span>&gt;</pre></div>
+</li>
+</ol>
 
 <h3>
 <a id="weixin-setup" class="anchor" href="#weixin-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Weixin Setup</h3>
@@ -277,8 +275,8 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 <li>In Xcode right-click your .plist file and choose "Open As Source Code".</li>
 <li>Copy &amp; Paste the XML snippet into the body of your file <code>(&lt;key&gt;CFBundleURLTypes&lt;/key&gt;
 &lt;array&gt;...&lt;/array&gt;)</code>.</li>
-<li>Replace {WEIXIN API ID} with your Weixin App ID:</li>
-</ol>
+<li>
+<p>Replace {WEIXIN API ID} with your Weixin App ID:</p>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dict</span>&gt;
     &lt;<span class="pl-ent">key</span>&gt;CFBundleURLSchemes&lt;/<span class="pl-ent">key</span>&gt;
@@ -286,23 +284,22 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
         &lt;<span class="pl-ent">string</span>&gt;{WEIXIN API ID}&lt;/<span class="pl-ent">string</span>&gt;
     &lt;/<span class="pl-ent">array</span>&gt;
 &lt;/<span class="pl-ent">dict</span>&gt;</pre></div>
-
-<ol>
-<li>Add following lines into body of your file <code>(&lt;dict&gt;...&lt;/dict&gt;)</code>
 </li>
-<li>Replace:
+<li><p>Add following lines into body of your file <code>(&lt;dict&gt;...&lt;/dict&gt;)</code></p></li>
+<li>
+<p>Replace:</p>
 
 <ul>
 <li>{WEIXIN API ID} with your Weixin App ID.</li>
 <li>{WEIXIN API NAME} with your Weixin App name.</li>
 </ul>
-</li>
-</ol>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">key</span>&gt;WeixinAppID&lt;/<span class="pl-ent">key</span>&gt;
 &lt;<span class="pl-ent">string</span>&gt;ENTER{WEIXIN API ID}&lt;/<span class="pl-ent">string</span>&gt;
 &lt;<span class="pl-ent">key</span>&gt;WeixinAppName&lt;/<span class="pl-ent">key</span>&gt;
 &lt;<span class="pl-ent">string</span>&gt;{WEIXIN API NAME}&lt;/<span class="pl-ent">string</span>&gt;</pre></div>
+</li>
+</ol>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
@@ -319,7 +316,7 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 
 <div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>Foundation/Foundation.h<span class="pl-pds">&gt;</span></span>
 
-<span class="pl-k">@interface</span> <span class="pl-en">InfoModal</span> : <span class="pl-e">NSObject</span> &lt;SocialLibMessage&gt;{
+<span class="pl-k">@interface</span> <span class="pl-en">InfoModal</span> : <span class="pl-e">NSObject</span> &lt;SocialLibFacebookMessage, SocialLibTwitterMessage, SocialLibTumblrMessage, SocialLibWeiboMessage, SocialLibWeixinMessage&gt;{
 
 }
 
@@ -364,6 +361,22 @@ pod <span class="pl-s"><span class="pl-pds">'</span>SocialLib/Weixin<span class=
 
 - (<span class="pl-c1">NSString</span> *)<span class="pl-en">tweetContent</span>{
     <span class="pl-k">return</span> [<span class="pl-c1">NSString</span> <span class="pl-c1">stringWithFormat:</span><span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">%@</span> - <span class="pl-c1">%@</span> <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>,_infoTitle, _infoContent, _infoContentURL];
+}
+
+- (SocialLibTwitterMessageType)<span class="pl-en">twitterMessageType</span>{
+    <span class="pl-k">return</span> SocialLibTwitterMessageTypeText;
+}
+
+- (SocialLibTumblrMessageType)<span class="pl-en">tumblrMessageType</span>{
+    <span class="pl-k">return</span> SocialLibTumblrMessageTypeLink;
+}
+
+- (SocialLibWeiboMessageType)<span class="pl-en">weiboMessageType</span>{
+    <span class="pl-k">return</span> SocialLibWeiboMessageTypeText;
+}
+
+- (SocialLibWeixinMessageType)<span class="pl-en">weixinMessageType</span>{
+    <span class="pl-k">return</span> SocialLibWeixinMessageTypeLink;
 }
 
 <span class="pl-k">@end</span></pre></div>
