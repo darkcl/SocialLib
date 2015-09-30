@@ -49,8 +49,28 @@ static SLShareFailure _weiboFailureBlock;
 
 + (WBMessageObject *)messageToShare:(id<SocialLibWeiboMessage>)weiboMessage
 {
+    SocialLibWeiboMessageType type = weiboMessage.weiboMessageType;
     WBMessageObject *message = [WBMessageObject message];
-    message.text = weiboMessage.content;
+    
+    switch (type) {
+        case SocialLibWeiboMessageTypeText: {
+            message.text = weiboMessage.content;
+            break;
+        }
+        case SocialLibWeiboMessageTypeImage: {
+            message.text = weiboMessage.content;
+            if (weiboMessage.images.count != 0) {
+                WBImageObject *imageObj = [WBImageObject object];
+                imageObj.imageData = UIImagePNGRepresentation(weiboMessage.images[0]);
+                message.imageObject = imageObj;
+            }
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+    
     return message;
 }
 
