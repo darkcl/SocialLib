@@ -136,27 +136,29 @@ In your AppDelegate,
 2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
 	<array>...</array>)`.
 3. Replace {URL Scheme} to what you want:
-```plist
-<dict>
-	<key>CFBundleURLSchemes</key>
-	<array>
-		<string>{URL Scheme}</string>
-	</array>
-</dict>
-```
+
+	```plist
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<string>{URL Scheme}</string>
+		</array>
+	</dict>
+	```
 4. Add following lines into body of your file `(<dict>...</dict>)`
 5. Replace:
    - {URL Scheme} with the same URL Scheme as above.
    - {Twitter Consumer Key} with your Twitter App Cosumer key - [Register Here](https://apps.twitter.com).
    - {Twitter Consumer Secret} with your Twitter App Cosumer Secret - [Register Here](https://apps.twitter.com).
-```plist
-<key>TwitterCallbackURL</key>
-<string>{URL Scheme}</string>
-<key>TwitterConsumerKey</key>
-<string>{Twitter Consumer Key}</string>
-<key>TwitterConsumerSecret</key>
-<string>{Twitter Consumer Secret}</string>
-```
+   
+	```plist
+	<key>TwitterCallbackURL</key>
+	<string>{URL Scheme}</string>
+	<key>TwitterConsumerKey</key>
+	<string>{Twitter Consumer Key}</string>
+	<key>TwitterConsumerSecret</key>
+	<string>{Twitter Consumer Secret}</string>
+	```
 *For Twitter application, you must have a valid callback url, otherwise the sharing will not work.*
 
 ###Tumblr Setup
@@ -164,75 +166,85 @@ In your AppDelegate,
 2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
 	<array>...</array>)`.
 3. Replace {URL Scheme} to what you want, must be unique:
-```plist
-<dict>
-	<key>CFBundleURLSchemes</key>
-	<array>
-		<string>{URL Scheme}</string>
-	</array>
-</dict>
-```
+
+	```plist
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<string>{URL Scheme}</string>
+		</array>
+	</dict>
+	```
+	
 4. Add following lines into body of your file `(<dict>...</dict>)`
 5. Replace:
    - {URL Scheme} with the same URL Scheme as above.
    - {Tumblr Consumer Key} with your Tumblr App Cosumer key - [Register Here](https://www.tumblr.com/oauth/apps).
    - {Tumblr Consumer Secret} with your Tumblr App Cosumer Secret - [Register Here](https://www.tumblr.com/oauth/apps).
-```plist
-<key>TumblrCallbackURL</key>
-<string>{URL Scheme}</string>
-<key>TumblrConsumerKey</key>
-<string>{Tumblr Consumer Key}</string>
-<key>TumblrConsumerSecret</key>
-<string>{Tumblr Consumer Secret}</string>
-```
+   
+	```plist
+	<key>TumblrCallbackURL</key>
+	<string>{URL Scheme}</string>
+	<key>TumblrConsumerKey</key>
+	<string>{Tumblr Consumer Key}</string>
+	<key>TumblrConsumerSecret</key>
+	<string>{Tumblr Consumer Secret}</string>
+	```
+	
 ###Weibo Setup
 1. In Xcode right-click your .plist file and choose "Open As Source Code".
 2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
 	<array>...</array>)`.
 3. Replace {WEIBO API ID} with your Weibo App ID:
-```plist
-<dict>
-	<key>CFBundleTypeRole</key>
-	<string>Editor</string>
-	<key>CFBundleURLName</key>
-	<string>com.weibo</string>
-	<key>CFBundleURLSchemes</key>
-	<array>
-		<string>{WEIBO API ID}</string>
-	</array>
-</dict>
-```
+
+	```plist
+	<dict>
+		<key>CFBundleTypeRole</key>
+		<string>Editor</string>
+		<key>CFBundleURLName</key>
+		<string>com.weibo</string>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<string>{WEIBO API ID}</string>
+		</array>
+	</dict>
+	```
+	
 4. Add following lines into body of your file `(<dict>...</dict>)`
 5. Replace:
    - {WEIBO API ID} with your Weibo App ID.
-```plist
-<key>WeiboAppID</key>
-<string>{WEIBO API ID}</string>
-```
+   
+	```plist
+	<key>WeiboAppID</key>
+	<string>{WEIBO API ID}</string>
+	```
 
 ###Weixin Setup
 1. In Xcode right-click your .plist file and choose "Open As Source Code".
 2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
 	<array>...</array>)`.
 3. Replace {WEIXIN API ID} with your Weixin App ID:
-```plist
-<dict>
-	<key>CFBundleURLSchemes</key>
-	<array>
-		<string>{WEIXIN API ID}</string>
-	</array>
-</dict>
-```
+
+	```plist
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<string>{WEIXIN API ID}</string>
+		</array>
+	</dict>
+	```
+	
 4. Add following lines into body of your file `(<dict>...</dict>)`
 5. Replace:
    - {WEIXIN API ID} with your Weixin App ID.
    - {WEIXIN API NAME} with your Weixin App name.
-```plist
-<key>WeixinAppID</key>
-<string>ENTER{WEIXIN API ID}</string>
-<key>WeixinAppName</key>
-<string>{WEIXIN API NAME}</string>
-```
+   
+	```plist
+	<key>WeixinAppID</key>
+	<string>ENTER{WEIXIN API ID}</string>
+	<key>WeixinAppName</key>
+	<string>{WEIXIN API NAME}</string>
+	```
 
 ## Usage
 
@@ -245,7 +257,7 @@ InfoModal.h
 ```objc
 #import <Foundation/Foundation.h>
 
-@interface InfoModal : NSObject <SocialLibMessage>{
+@interface InfoModal : NSObject <SocialLibFacebookMessage, SocialLibTwitterMessage, SocialLibTumblrMessage, SocialLibWeiboMessage, SocialLibWeixinMessage>{
     
 }
 
@@ -291,6 +303,22 @@ InfoModal.m
 
 - (NSString *)tweetContent{
     return [NSString stringWithFormat:@"%@ - %@ %@",_infoTitle, _infoContent, _infoContentURL];
+}
+
+- (SocialLibTwitterMessageType)twitterMessageType{
+    return SocialLibTwitterMessageTypeText;
+}
+
+- (SocialLibTumblrMessageType)tumblrMessageType{
+    return SocialLibTumblrMessageTypeLink;
+}
+
+- (SocialLibWeiboMessageType)weiboMessageType{
+    return SocialLibWeiboMessageTypeText;
+}
+
+- (SocialLibWeixinMessageType)weixinMessageType{
+    return SocialLibWeixinMessageTypeLink;
 }
 
 @end
