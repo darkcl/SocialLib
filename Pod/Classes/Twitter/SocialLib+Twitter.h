@@ -8,15 +8,38 @@
 
 #import "SocialLib.h"
 
-typedef NS_ENUM(NSInteger, SocialLibTwitterMessageType) {
+/**
+ *  Twitter message type
+ */
+typedef NS_ENUM(NSInteger, SocialLibTwitterMessageType){
+    /**
+     *  Tweet text only, will use tweetContent in <SocialLibTwitterMessage>
+     */
     SocialLibTwitterMessageTypeText,
+    /**
+     *  Tweet text only, will use tweetContent in <SocialLibTwitterMessage> and images in <SocialLibMessage>
+     */
     SocialLibTwitterMessageTypeImage
 };
 
+/**
+ *  SocialLib Twitter message protocol
+ */
 @protocol SocialLibTwitterMessage <SocialLibMessage>
 
 @required
+/**
+ *  Twitter message type of share modal
+ *
+ *  @return Twitter message type
+ */
 - (SocialLibTwitterMessageType)twitterMessageType;
+
+/**
+ *  Tweet content of share modal
+ *
+ *  @return Tweet content of share modal, length need to less than 140
+ */
 - (NSString *)tweetContent;
 
 @end
