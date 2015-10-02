@@ -84,5 +84,9 @@ Now support twitter, facebook, tumblr, wechat (weixin) and weibo.
     weixin.dependency 'Weixin'
   end
 
-  s.default_subspecs = 'Core', 'Facebook', 'Twitter', 'Tumblr', 'Weibo', 'Weixin'
+  s.subspec 'Instagram' do |instagram|
+    instagram.source_files = 'Pod/Classes/Instagram/*.{h,m}'
+    instagram.dependency 'SocialLib/Core'
+  end
+  s.default_subspecs = 'Core', 'Facebook', 'Twitter', 'Tumblr', 'Weibo', 'Weixin', 'Instagram'
 end

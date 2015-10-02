@@ -24,6 +24,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		7496F25D1BB7F2A500E85F03 /* InfoModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7496F25C1BB7F2A500E85F03 /* InfoModal.m */; };
 		7496F2671BB81FDB00E85F03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7496F2661BB81FDB00E85F03 /* LaunchScreen.storyboard */; };
+		74C651791BBEDB86008E4896 /* example.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 74C651781BBEDB86008E4896 /* example.jpg */; };
 		7859117A236BF8E6F0423BBB /* libPods-SocialLib_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EFB28192E65555E8614B3F /* libPods-SocialLib_Tests.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		7496F25B1BB7F2A500E85F03 /* InfoModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoModal.h; sourceTree = "<group>"; };
 		7496F25C1BB7F2A500E85F03 /* InfoModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoModal.m; sourceTree = "<group>"; };
 		7496F2661BB81FDB00E85F03 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74C651781BBEDB86008E4896 /* example.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example.jpg; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8C8FCD280958EEEB4A449612 /* Pods-SocialLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLib_Tests/Pods-SocialLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A2AC110282A25807EFC8D7E /* Pods-SocialLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLib_Example/Pods-SocialLib_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				6003F5A5195388D20070C39A /* SLViewController.h */,
 				6003F5A6195388D20070C39A /* SLViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				74C651781BBEDB86008E4896 /* example.jpg */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				7496F25B1BB7F2A500E85F03 /* InfoModal.h */,
 				7496F25C1BB7F2A500E85F03 /* InfoModal.m */,
@@ -292,6 +295,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				7496F2671BB81FDB00E85F03 /* LaunchScreen.storyboard in Resources */,
+				74C651791BBEDB86008E4896 /* example.jpg in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);

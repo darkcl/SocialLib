@@ -11,6 +11,13 @@
 
 @implementation InfoModal
 
+- (id)init{
+    if (self = [super init]) {
+        _imageType = SocialLibInstagramMessageTypeLocal;
+    }
+    return self;
+}
+
 #pragma mark - SocialLibMessage
 - (NSString *)socialLibTitle{
     return _infoTitle;
@@ -58,5 +65,19 @@
 
 - (SocialLibWeixinMessageType)weixinMessageType{
     return SocialLibWeixinMessageTypeLink;
+}
+
+- (SocialLibInstagramMessageType)instagramMessageType{
+    return _imageType;
+}
+
+- (NSString *)socialLibInstagramURL{
+    return @"http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg";
+}
+
+- (UIImage *)socialLibInstagramImage{
+    UIImage *anImage = [UIImage imageNamed:@"example.jpg"];
+    
+    return anImage;
 }
 @end

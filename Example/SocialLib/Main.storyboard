@@ -56,9 +56,19 @@
                                     <action selector="shareToWeixin:" destination="whP-gf-Uak" eventType="touchUpInside" id="qOy-ln-x9K"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-2M-ICb">
+                                <rect key="frame" x="235" y="475" width="131" height="30"/>
+                                <state key="normal" title="Share to Instagram">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareToInstagram:" destination="whP-gf-Uak" eventType="touchUpInside" id="2qN-II-Bjs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aRz-2M-ICb" firstAttribute="top" secondItem="Ub7-fK-vTN" secondAttribute="bottom" constant="8" id="6GL-T8-PdV"/>
                             <constraint firstItem="8nW-N0-JN2" firstAttribute="top" secondItem="4PV-rh-UWI" secondAttribute="bottom" constant="8" id="CBf-iu-vc9"/>
                             <constraint firstItem="4PV-rh-UWI" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="DBu-Pf-943"/>
                             <constraint firstItem="Ub7-fK-vTN" firstAttribute="top" secondItem="v6o-4T-b71" secondAttribute="bottom" constant="8" id="Dr2-Yf-dmb"/>
@@ -68,6 +78,7 @@
                             <constraint firstAttribute="centerX" secondItem="v6o-4T-b71" secondAttribute="centerX" id="er2-U8-pIN"/>
                             <constraint firstItem="RQ1-LE-8t6" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="gf4-Qs-mXL"/>
                             <constraint firstItem="4PV-rh-UWI" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="h2U-ty-ere"/>
+                            <constraint firstAttribute="centerX" secondItem="aRz-2M-ICb" secondAttribute="centerX" id="kX8-65-fsg"/>
                             <constraint firstItem="RQ1-LE-8t6" firstAttribute="top" secondItem="8nW-N0-JN2" secondAttribute="bottom" constant="8" id="lin-BF-GM3"/>
                         </constraints>
                     </view>

@@ -24,6 +24,7 @@ PODS:
   - SocialLib (0.0.2):
     - SocialLib/Core (= 0.0.2)
     - SocialLib/Facebook (= 0.0.2)
+    - SocialLib/Instagram (= 0.0.2)
     - SocialLib/Tumblr (= 0.0.2)
     - SocialLib/Twitter (= 0.0.2)
     - SocialLib/Weibo (= 0.0.2)
@@ -33,6 +34,8 @@ PODS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - SocialLib/Core
+  - SocialLib/Instagram (0.0.2):
     - SocialLib/Core
   - SocialLib/Tumblr (0.0.2):
     - AFOAuth1Client
@@ -64,7 +67,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
   FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
   FBSDKShareKit: f474f1123791e215d0299b98b3ee92ddd9187d86
-  SocialLib: 5e3f884ac3a47a47593222a45c5e7394712605e6
+  SocialLib: da298f1dafc903d563b764bf1a33c110f68eb5db
   STTwitter: eb85d8770ddb0f8989f341cf41ea875e90ac6e7f
   WeiboSDK: ebdd7db58670dc0f8a4389a0b9b3069bcbc1d034
   Weixin: 078167ff244c56fa8352506420b6328a13a184a1

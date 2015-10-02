@@ -134,4 +134,16 @@
                   }];
 }
 
+- (IBAction)shareToInstagram:(id)sender {
+    InfoModal *info = [[InfoModal alloc] init];
+    [SocialLib shareModal:info
+               toPlatform:kSocialLibPlatformInstagram
+                  success:^(NSDictionary *message) {
+                      NSLog(@"%@", message);
+                  }
+                  failure:^(NSDictionary *message, NSError *error) {
+                      NSLog(@"%@", error);
+                  }];
+}
+
 @end

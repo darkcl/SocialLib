@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface InfoModal : NSObject <SocialLibFacebookMessage, SocialLibTwitterMessage, SocialLibTumblrMessage, SocialLibWeiboMessage, SocialLibWeixinMessage>{
+@interface InfoModal : NSObject <SocialLibFacebookMessage, SocialLibTwitterMessage, SocialLibTumblrMessage, SocialLibWeiboMessage, SocialLibWeixinMessage, SocialLibInstagramMessage>{
     
 }
 
@@ -18,5 +18,7 @@
 @property (nonatomic, strong) NSArray *infoImages;
 @property (nonatomic, strong) NSString *infoThumbnailImageURL;
 @property (nonatomic, strong) NSString *infoVideoURL;
+
+@property SocialLibInstagramMessageType imageType;
 
 @end

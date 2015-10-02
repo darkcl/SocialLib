@@ -42,7 +42,8 @@
     "Twitter",
     "Tumblr",
     "Weibo",
-    "Weixin"
+    "Weixin",
+    "Instagram"
   ],
   "subspecs": [
     {
@@ -111,6 +112,15 @@
 
         ],
         "Weixin": [
+
+        ]
+      }
+    },
+    {
+      "name": "Instagram",
+      "source_files": "Pod/Classes/Instagram/*.{h,m}",
+      "dependencies": {
+        "SocialLib/Core": [
 
         ]
       }
