@@ -103,14 +103,14 @@ static id<SocialLibTwitterMessage> twitterShareMsg;
     }else{
         if ([obj.class conformsToProtocol:@protocol(SocialLibTwitterMessage)]) {
             SocialLibTwitterMessageType type = obj.twitterMessageType;
-            if (obj.tweetContent.length >= 140) {
+            if (obj.socialLibTweetContent.length >= 140) {
                 NSError *error = [NSError errorWithDomain:@"SocailLib"
                                                      code:4
                                                  userInfo:@{NSLocalizedDescriptionKey : @"Tweet length reach maxium character"}];
                 failureBlock(nil, error);
             }else{
                 if (type == SocialLibTwitterMessageTypeText) {
-                    NSString *tweetConent = obj.tweetContent;
+                    NSString *tweetConent = obj.socialLibTweetContent;
                     [twitter postStatusUpdate:tweetConent
                             inReplyToStatusID:nil
                                      latitude:nil
@@ -125,10 +125,10 @@ static id<SocialLibTwitterMessage> twitterShareMsg;
                                        failureBlock(nil, error);
                                    }];
                 }else if (type == SocialLibTwitterMessageTypeImage) {
-                    NSString *tweetConent = obj.tweetContent;
+                    NSString *tweetConent = obj.socialLibTweetContent;
                     NSArray *images;
-                    if ([obj respondsToSelector:@selector(images)] && obj.images.count != 0) {
-                        images = obj.images;
+                    if ([obj respondsToSelector:@selector(socialLibImages)] && obj.socialLibImages.count != 0) {
+                        images = obj.socialLibImages;
                         [twitter postStatusUpdate:tweetConent
                                    mediaDataArray:images
                                 possiblySensitive:nil

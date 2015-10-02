@@ -50,7 +50,7 @@ static SLShareFailure _fbfailureBlock;
         switch (type) {
             case SocialLibFacebookMessageTypeText:{
                 FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-                content.contentDescription = obj.content;
+                content.contentDescription = obj.socialLibContent;
                 [FBSDKShareDialog showFromViewController:nil
                                              withContent:content
                                                 delegate:[SocialLib sharedInstance]];
@@ -59,7 +59,7 @@ static SLShareFailure _fbfailureBlock;
                 break;
             case SocialLibFacebookMessageTypePhoto:{
                 NSMutableArray *imagesArray = [[NSMutableArray alloc] init];
-                for (UIImage *image in obj.images) {
+                for (UIImage *image in obj.socialLibImages) {
                     FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
                     photo.image = image;
                     photo.userGenerated = YES;
@@ -75,7 +75,7 @@ static SLShareFailure _fbfailureBlock;
             case SocialLibFacebookMessageTypeVideo:{
                 FBSDKShareVideoContent *content = [[FBSDKShareVideoContent alloc] init];
                 FBSDKShareVideo *video = [[FBSDKShareVideo alloc] init];
-                video.videoURL = [NSURL URLWithString:obj.videoURL];
+                video.videoURL = [NSURL URLWithString:obj.socialLibVideoURL];
                 content.video = video;
                 
                 [FBSDKShareDialog showFromViewController:nil
@@ -85,18 +85,18 @@ static SLShareFailure _fbfailureBlock;
                 break;
             case SocialLibFacebookMessageTypeLink:{
                 FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-                content.contentURL = [NSURL URLWithString:obj.contentURL];
+                content.contentURL = [NSURL URLWithString:obj.socialLibContentURL];
                 
-                if ([obj respondsToSelector:@selector(title)]) {
-                    content.contentTitle = obj.title;
+                if ([obj respondsToSelector:@selector(socialLibTitle)]) {
+                    content.contentTitle = obj.socialLibTitle;
                 }
                 
-                if ([obj respondsToSelector:@selector(thumbnailImageURL)]) {
-                    content.imageURL = [NSURL URLWithString:obj.thumbnailImageURL];
+                if ([obj respondsToSelector:@selector(socialLibThumbnailImageURL)]) {
+                    content.imageURL = [NSURL URLWithString:obj.socialLibThumbnailImageURL];
                 }
                 
-                if ([obj respondsToSelector:@selector(content)]) {
-                    content.contentDescription = obj.content;
+                if ([obj respondsToSelector:@selector(socialLibContent)]) {
+                    content.contentDescription = obj.socialLibContent;
                 }
                 
                 [FBSDKShareDialog showFromViewController:nil

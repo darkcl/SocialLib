@@ -176,13 +176,13 @@ static NSString *tumblrBlog;
     switch (type) {
         case SocialLibTumblrMessageTypeText: {
             NSString *content;
-            if (modal.content != nil) {
-                content = modal.content;
+            if (modal.socialLibContent != nil) {
+                content = modal.socialLibContent;
             }else{
                 shareFail = YES;
             }
             
-            NSString *title = modal.title;
+            NSString *title = modal.socialLibTitle;
             
             [param setObject:@"text" forKey:@"type"];
             [param setObject:title forKey:@"title"];
@@ -193,9 +193,9 @@ static NSString *tumblrBlog;
         case SocialLibTumblrMessageTypePhoto: {
             [param setObject:@"photo" forKey:@"type"];
             
-            if (modal.images.count == 0) {
+            if (modal.socialLibImages.count == 0) {
                 NSMutableArray *data = [[NSMutableArray alloc] init];
-                for (UIImage *anImage in modal.images) {
+                for (UIImage *anImage in modal.socialLibImages) {
                     [data addObject:[self imageToString:anImage]];
                 }
                 [param setObject:data forKey:@"data"];
@@ -208,11 +208,11 @@ static NSString *tumblrBlog;
         case SocialLibTumblrMessageTypeQuote: {
             [param setObject:@"quote" forKey:@"type"];
             
-            if (modal.content != nil) {
-                [param setObject:modal.content forKey:@"quote"];
+            if (modal.socialLibContent != nil) {
+                [param setObject:modal.socialLibContent forKey:@"quote"];
                 
-                if (modal.contentURL != nil) {
-                    [param setObject:modal.contentURL forKey:@"source"];
+                if (modal.socialLibContentURL != nil) {
+                    [param setObject:modal.socialLibContentURL forKey:@"source"];
                 }
             }else{
                 shareFail = YES;
@@ -223,15 +223,15 @@ static NSString *tumblrBlog;
         case SocialLibTumblrMessageTypeLink: {
             [param setObject:@"link" forKey:@"type"];
             
-            if (modal.contentURL != nil) {
-                [param setObject:modal.contentURL forKey:@"url"];
+            if (modal.socialLibContentURL != nil) {
+                [param setObject:modal.socialLibContentURL forKey:@"url"];
                 
-                if (modal.title != nil) {
-                    [param setObject:modal.title forKey:@"title"];
+                if (modal.socialLibTitle != nil) {
+                    [param setObject:modal.socialLibTitle forKey:@"title"];
                 }
                 
-                if (modal.content != nil) {
-                    [param setObject:modal.content forKey:@"description"];
+                if (modal.socialLibContent != nil) {
+                    [param setObject:modal.socialLibContent forKey:@"description"];
                 }
             }else{
                 shareFail = YES;

@@ -12,27 +12,27 @@
 @implementation InfoModal
 
 #pragma mark - SocialLibMessage
-- (NSString *)title{
+- (NSString *)socialLibTitle{
     return _infoTitle;
 }
 
-- (NSString *)content{
+- (NSString *)socialLibContent{
     return _infoContent;
 }
 
-- (NSString *)contentURL{
+- (NSString *)socialLibContentURL{
     return _infoContentURL;
 }
 
-- (NSArray *)images{
+- (NSArray *)socialLibImages{
     return _infoImages;
 }
 
-- (NSString *)thumbnailImageURL{
+- (NSString *)socialLibThumbnailImageURL{
     return _infoThumbnailImageURL;
 }
 
-- (NSString *)videoURL{
+- (NSString *)socialLibVideoURL{
     return _infoVideoURL;
 }
 
@@ -40,7 +40,7 @@
     return SocialLibFacebookMessageTypeLink;
 }
 
-- (NSString *)tweetContent{
+- (NSString *)socialLibTweetContent{
     return [NSString stringWithFormat:@"%@ - %@ %@",_infoTitle, _infoContent, _infoContentURL];
 }
 

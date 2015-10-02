@@ -36,42 +36,42 @@ typedef void (^SLShareFailure)(NSDictionary* message, NSError* error);
  *
  *  @return Title string of share modal
  */
-- (NSString *)title;
+- (NSString *)socialLibTitle;
 
 /**
  *  Content text of share modal
  *
  *  @return Content text string
  */
-- (NSString *)content;
+- (NSString *)socialLibContent;
 
 /**
  *  Link of share modal
  *
  *  @return URL string of the link
  */
-- (NSString *)contentURL;
+- (NSString *)socialLibContentURL;
 
 /**
  *  Images array, store UIImage only
  *
  *  @return Array of UIImage to share
  */
-- (NSArray *)images;
+- (NSArray *)socialLibImages;
 
 /**
  *  Thumbnail image URL
  *
  *  @return URL string for thumbnail image
  */
-- (NSString *)thumbnailImageURL;
+- (NSString *)socialLibThumbnailImageURL;
 
 /**
  *  Video URL, need to be assest URL
  *
  *  @return Assest URL of video
  */
-- (NSString *)videoURL;
+- (NSString *)socialLibVideoURL;
 
 @end
 

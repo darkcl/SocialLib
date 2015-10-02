@@ -66,20 +66,20 @@ static enum WXScene weixinScene;
     WXMediaMessage *message = [WXMediaMessage message];
     switch (type) {
         case SocialLibWeixinMessageTypeText: {
-            message.description = weixinMessage.content;
+            message.description = weixinMessage.socialLibContent;
             break;
         }
         case SocialLibWeixinMessageTypeImage: {
             WXImageObject *imageObj = [WXImageObject object];
-            imageObj.imageData = UIImagePNGRepresentation(weixinMessage.images[0]);
+            imageObj.imageData = UIImagePNGRepresentation(weixinMessage.socialLibImages[0]);
             message.mediaObject = imageObj;
             break;
         }
         case SocialLibWeixinMessageTypeLink: {
-            message.title = weixinMessage.title;
-            message.description = weixinMessage.content;
+            message.title = weixinMessage.socialLibTitle;
+            message.description = weixinMessage.socialLibContent;
             WXWebpageObject *ext = [WXWebpageObject object];
-            ext.webpageUrl = weixinMessage.contentURL;
+            ext.webpageUrl = weixinMessage.socialLibContentURL;
             message.mediaObject = ext;
             break;
         }

@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, SocialLibTwitterMessageType){
  *
  *  @return Tweet content of share modal, length need to less than 140
  */
-- (NSString *)tweetContent;
+- (NSString *)socialLibTweetContent;
 
 @end
 

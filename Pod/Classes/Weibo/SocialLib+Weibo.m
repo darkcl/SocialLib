@@ -54,14 +54,14 @@ static SLShareFailure _weiboFailureBlock;
     
     switch (type) {
         case SocialLibWeiboMessageTypeText: {
-            message.text = weiboMessage.content;
+            message.text = weiboMessage.socialLibContent;
             break;
         }
         case SocialLibWeiboMessageTypeImage: {
-            message.text = weiboMessage.content;
-            if (weiboMessage.images.count != 0) {
+            message.text = weiboMessage.socialLibContent;
+            if (weiboMessage.socialLibImages.count != 0) {
                 WBImageObject *imageObj = [WBImageObject object];
-                imageObj.imageData = UIImagePNGRepresentation(weiboMessage.images[0]);
+                imageObj.imageData = UIImagePNGRepresentation(weiboMessage.socialLibImages[0]);
                 message.imageObject = imageObj;
             }
             break;
