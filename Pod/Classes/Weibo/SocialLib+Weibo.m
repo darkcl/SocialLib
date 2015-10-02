@@ -77,14 +77,23 @@ static SLShareFailure _weiboFailureBlock;
 + (void)shareModalToWeibo:(id<SocialLibWeiboMessage>)obj
                   success:(SLShareSuccess)successBlock
                   failure:(SLShareFailure)failureBlock{
-    _weiboSuccessBlock = successBlock;
-    _weiboFailureBlock = failureBlock;
-    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
-    authRequest.redirectURI = kRedirectURI;
-    authRequest.scope = @"all";
-    
-    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self wbMessageToShare:obj] authInfo:authRequest access_token:wbtoken];
-    [WeiboSDK sendRequest:request];
+    if (!wbtoken) {
+        _weiboSuccessBlock = successBlock;
+        _weiboFailureBlock = failureBlock;
+        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+        authRequest.redirectURI = kRedirectURI;
+        authRequest.scope = @"all";
+        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self wbMessageToShare:obj] authInfo:authRequest access_token:nil];
+        [WeiboSDK sendRequest:request];
+    }else{
+        _weiboSuccessBlock = successBlock;
+        _weiboFailureBlock = failureBlock;
+        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+        authRequest.redirectURI = kRedirectURI;
+        authRequest.scope = @"all";
+        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self wbMessageToShare:obj] authInfo:authRequest access_token:wbtoken];
+        [WeiboSDK sendRequest:request];
+    }
 }
 
 #pragma mark - Weibo Delegate
