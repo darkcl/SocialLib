@@ -42,4 +42,11 @@ static NSString *kSocialLibPlatformWeibo = @"Weibo";
 
 @interface SocialLib (Weibo) <WeiboSDKDelegate>
 
+/**
+ *  Set Weibo Redirect URI, which you set in Weibo website
+ *  default is "https://api.weibo.com/oauth2/default.html"
+ *  @param uri RedirectURI
+ */
++ (void)setWeiboRedirectURI:(NSString *)uri;
+
 @end

@@ -14,10 +14,11 @@
 
 static NSString* wbtoken;
 static NSString* wbCurrentUserID;
-static NSString * const kRedirectURI = @"https://api.weibo.com/oauth2/default.html";
+static NSString* kRedirectURI = @"https://api.weibo.com/oauth2/default.html";
 
 static SLShareSuccess _weiboSuccessBlock;
 static SLShareFailure _weiboFailureBlock;
+
 + (void)load{
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
     NSString* weiboAppID = [infoDict objectForKey:@"WeiboAppID"];
@@ -46,6 +47,9 @@ static SLShareFailure _weiboFailureBlock;
     
 }
 
++ (void)setWeiboRedirectURI:(NSString *)uri{
+    kRedirectURI = uri;
+}
 
 + (WBMessageObject *)wbMessageToShare:(id<SocialLibWeiboMessage>)weiboMessage
 {
@@ -77,23 +81,13 @@ static SLShareFailure _weiboFailureBlock;
 + (void)shareModalToWeibo:(id<SocialLibWeiboMessage>)obj
                   success:(SLShareSuccess)successBlock
                   failure:(SLShareFailure)failureBlock{
-    if (!wbtoken) {
-        _weiboSuccessBlock = successBlock;
-        _weiboFailureBlock = failureBlock;
-        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
-        authRequest.redirectURI = kRedirectURI;
-        authRequest.scope = @"all";
-        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self wbMessageToShare:obj] authInfo:authRequest access_token:nil];
-        [WeiboSDK sendRequest:request];
-    }else{
-        _weiboSuccessBlock = successBlock;
-        _weiboFailureBlock = failureBlock;
-        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
-        authRequest.redirectURI = kRedirectURI;
-        authRequest.scope = @"all";
-        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self wbMessageToShare:obj] authInfo:authRequest access_token:wbtoken];
-        [WeiboSDK sendRequest:request];
-    }
+    _weiboSuccessBlock = successBlock;
+    _weiboFailureBlock = failureBlock;
+    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+    authRequest.redirectURI = kRedirectURI;
+    authRequest.scope = @"all";
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self wbMessageToShare:obj] authInfo:authRequest access_token:wbtoken];
+    [WeiboSDK sendRequest:request];
 }
 
 #pragma mark - Weibo Delegate
