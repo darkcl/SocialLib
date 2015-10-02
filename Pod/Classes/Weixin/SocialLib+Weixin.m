@@ -60,7 +60,7 @@ static enum WXScene weixinScene;
 }
 
 
-+ (WXMediaMessage *)messageToShare:(id<SocialLibWeixinMessage>)weixinMessage
++ (WXMediaMessage *)wxMessageToShare:(id<SocialLibWeixinMessage>)weixinMessage
 {
     SocialLibWeixinMessageType type = weixinMessage.weixinMessageType;
     WXMediaMessage *message = [WXMediaMessage message];
@@ -103,7 +103,7 @@ static enum WXScene weixinScene;
     }else{
         SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
         req.bText = NO;
-        req.message = [self messageToShare:obj];
+        req.message = [self wxMessageToShare:obj];
         req.scene = weixinScene;
         BOOL success = [WXApi sendReq:req];
         if(success){

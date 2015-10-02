@@ -47,7 +47,7 @@ static SLShareFailure _weiboFailureBlock;
 }
 
 
-+ (WBMessageObject *)messageToShare:(id<SocialLibWeiboMessage>)weiboMessage
++ (WBMessageObject *)wbMessageToShare:(id<SocialLibWeiboMessage>)weiboMessage
 {
     SocialLibWeiboMessageType type = weiboMessage.weiboMessageType;
     WBMessageObject *message = [WBMessageObject message];
@@ -83,7 +83,7 @@ static SLShareFailure _weiboFailureBlock;
     authRequest.redirectURI = kRedirectURI;
     authRequest.scope = @"all";
     
-    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self messageToShare:obj] authInfo:authRequest access_token:wbtoken];
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self wbMessageToShare:obj] authInfo:authRequest access_token:wbtoken];
     [WeiboSDK sendRequest:request];
 }
 
