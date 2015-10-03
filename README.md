@@ -10,7 +10,7 @@
 SocialLib is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-Install all platform (Facebook, Twitter, Tumblr, Weibo and Weixin)
+Install all platform (Facebook, Twitter, Tumblr, Instagram, Weibo and Weixin)
 ```ruby
 pod 'SocialLib'
 ```
@@ -20,6 +20,7 @@ For specific social platform, use subspec
 pod 'SocialLib/Facebook'
 pod 'SocialLib/Twitter'
 pod 'SocialLib/Tumblr'
+pod 'SocialLib/Instagram'
 pod 'SocialLib/Weibo'
 pod 'SocialLib/Weixin'
 ```
