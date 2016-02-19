@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/SocialLib.svg?style=flat)](http://cocoapods.org/pods/SocialLib)
 
 ###What is  SocialLib?
-SocialLib is a library that aims to share information to different social media site without getting your code messing with different social media SDKs. 
+SocialLib is a library that aims to share information to different social media site without getting your code messy with different social media SDKs. 
 
 Sharing with SocialLib is simple, you can have the same modal to share to different social media.
 
