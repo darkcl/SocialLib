@@ -5,6 +5,108 @@
 [![License](https://img.shields.io/cocoapods/l/SocialLib.svg?style=flat)](http://cocoapods.org/pods/SocialLib)
 [![Platform](https://img.shields.io/cocoapods/p/SocialLib.svg?style=flat)](http://cocoapods.org/pods/SocialLib)
 
+###What is  SocialLib?
+SocialLib is a library that aims to share information to different social media site without getting your code messing with different social media SDKs. 
+
+Sharing with SocialLib is simple, you can have the same modal to share to different social media.
+
+Here is an example for the same modal to share to Twitter and Facebook.
+
+InfoModal.h
+```objc
+#import <Foundation/Foundation.h>
+
+@interface InfoModal : NSObject <SocialLibFacebookMessage, SocialLibTwitterMessage>{
+    
+}
+
+@property (nonatomic, strong) NSString *infoTitle;
+@property (nonatomic, strong) NSString *infoContent;
+@property (nonatomic, strong) NSString *infoContentURL;
+@property (nonatomic, strong) NSArray *infoImages;
+@property (nonatomic, strong) NSString *infoThumbnailImageURL;
+@property (nonatomic, strong) NSString *infoVideoURL;
+```
+
+InfoModal.m
+```objc
+#import "InfoModal.h"
+
+
+@implementation InfoModal
+
+#pragma mark - SocialLibMessage
+- (NSString *)title{
+    return _infoTitle;
+}
+
+- (NSString *)content{
+    return _infoContent;
+}
+
+- (NSString *)contentURL{
+    return _infoContentURL;
+}
+
+- (NSArray *)images{
+    return _infoImages;
+}
+
+- (NSString *)thumbnailImageURL{
+    return _infoThumbnailImageURL;
+}
+
+- (NSString *)videoURL{
+    return _infoVideoURL;
+}
+
+- (NSString *)tweetContent{
+    return [NSString stringWithFormat:@"%@ - %@ %@",_infoTitle, _infoContent, _infoContentURL];
+}
+
+- (SocialLibTwitterMessageType)twitterMessageType{
+    return SocialLibTwitterMessageTypeText;
+}
+
+- (SocialLibFacebookMessageType)fbMessageType{
+    return SocialLibFacebookMessageTypeLink;
+}
+
+@end
+```
+
+To share facebook use
+```objc
+InfoModal *info = [[InfoModal alloc] init];
+info.infoTitle = @"SocialLib";
+info.infoContent = @"Share via SocialLib";
+info.infoContentURL = @"http://darkcl.github.io/SocialLib";
+[SocialLib shareModal:info
+           toPlatform:kSocialLibPlatformFacebook
+              success:^(NSDictionary *message) {
+                  NSLog(@"%@", message);
+              }
+              failure:^(NSDictionary *message, NSError *error) {
+                  NSLog(@"%@", error);
+              }];
+```
+
+To share twitter use
+```objc
+InfoModal *info = [[InfoModal alloc] init];
+info.infoTitle = @"SocialLib";
+info.infoContent = @"Share via SocialLib";
+info.infoContentURL = @"http://darkcl.github.io/SocialLib";
+[SocialLib shareModal:info
+           toPlatform:kSocialLibPlatformTwitter
+              success:^(NSDictionary *message) {
+                  NSLog(@"%@", message);
+              }
+              failure:^(NSDictionary *message, NSError *error) {
+                  NSLog(@"%@", error);
+              }];
+```
+
 ## Installation
 
 SocialLib is available through [CocoaPods](http://cocoapods.org). To install
@@ -251,111 +353,6 @@ In your AppDelegate,
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 **Demo provided Facebook, Twitter and Tumblr api keys, Weibo and Weixin api keys are empty**
-###Sharing Sample
-You need a modal object to use SocialLib share
-
-InfoModal.h
-```objc
-#import <Foundation/Foundation.h>
-
-@interface InfoModal : NSObject <SocialLibFacebookMessage, SocialLibTwitterMessage, SocialLibTumblrMessage, SocialLibWeiboMessage, SocialLibWeixinMessage>{
-    
-}
-
-@property (nonatomic, strong) NSString *infoTitle;
-@property (nonatomic, strong) NSString *infoContent;
-@property (nonatomic, strong) NSString *infoContentURL;
-@property (nonatomic, strong) NSArray *infoImages;
-@property (nonatomic, strong) NSString *infoThumbnailImageURL;
-@property (nonatomic, strong) NSString *infoVideoURL;
-```
-
-InfoModal.m
-```objc
-#import "InfoModal.h"
-
-
-@implementation InfoModal
-
-#pragma mark - SocialLibMessage
-- (NSString *)title{
-    return _infoTitle;
-}
-
-- (NSString *)content{
-    return _infoContent;
-}
-
-- (NSString *)contentURL{
-    return _infoContentURL;
-}
-
-- (NSArray *)images{
-    return _infoImages;
-}
-
-- (NSString *)thumbnailImageURL{
-    return _infoThumbnailImageURL;
-}
-
-- (NSString *)videoURL{
-    return _infoVideoURL;
-}
-
-- (NSString *)tweetContent{
-    return [NSString stringWithFormat:@"%@ - %@ %@",_infoTitle, _infoContent, _infoContentURL];
-}
-
-- (SocialLibTwitterMessageType)twitterMessageType{
-    return SocialLibTwitterMessageTypeText;
-}
-
-- (SocialLibTumblrMessageType)tumblrMessageType{
-    return SocialLibTumblrMessageTypeLink;
-}
-
-- (SocialLibWeiboMessageType)weiboMessageType{
-    return SocialLibWeiboMessageTypeText;
-}
-
-- (SocialLibWeixinMessageType)weixinMessageType{
-    return SocialLibWeixinMessageTypeLink;
-}
-
-@end
-```
-
-To share facebook use
-```objc
-InfoModal *info = [[InfoModal alloc] init];
-info.infoTitle = @"SocialLib";
-info.infoContent = @"Share via SocialLib";
-info.infoContentURL = @"http://darkcl.github.io/SocialLib";
-[SocialLib shareModal:info
-           toPlatform:kSocialLibPlatformFacebook
-              success:^(NSDictionary *message) {
-                  NSLog(@"%@", message);
-              }
-              failure:^(NSDictionary *message, NSError *error) {
-                  NSLog(@"%@", error);
-              }];
-```
-
-To share twitter use
-```objc
-InfoModal *info = [[InfoModal alloc] init];
-info.infoTitle = @"SocialLib";
-info.infoContent = @"Share via SocialLib";
-info.infoContentURL = @"http://darkcl.github.io/SocialLib";
-[SocialLib shareModal:info
-           toPlatform:kSocialLibPlatformTwitter
-              success:^(NSDictionary *message) {
-                  NSLog(@"%@", message);
-              }
-              failure:^(NSDictionary *message, NSError *error) {
-                  NSLog(@"%@", error);
-              }];
-```
 
 ## Author
 
