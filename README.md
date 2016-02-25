@@ -142,3 +142,7 @@ Yeung Yiu Hung, hkclex@gmail.com
 ## License
 
 SocialLib is available under the MIT license. See the LICENSE file for more info.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/darkcl/sociallib/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
