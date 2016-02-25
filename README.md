@@ -12,7 +12,7 @@ Sharing with SocialLib is simple, you can have the same modal to share to differ
 
 Here is an example for the same modal to share to Twitter and Facebook.
 
-InfoModal.h
+`InfoModal.h`
 ```objc
 #import <Foundation/Foundation.h>
 
@@ -28,7 +28,7 @@ InfoModal.h
 @property (nonatomic, strong) NSString *infoVideoURL;
 ```
 
-InfoModal.m
+`InfoModal.m`
 ```objc
 #import "InfoModal.h"
 
@@ -127,227 +127,8 @@ pod 'SocialLib/Weibo'
 pod 'SocialLib/Weixin'
 ```
 
-##General Setup
-In your .pch, add following lines
-```objc
-//Facebook:
-#import <SocialLib/SocialLib+Facebook.h>
-
-//Twitter:
-#import <SocialLib/SocialLib+Twitter.h>
-
-//Tumblr:
-#import <SocialLib/SocialLib+Tumblr.h>
-
-//Weibo:
-#import <SocialLib/SocialLib+Weibo.h>
-
-//Weixin / WeChat:
-#import <SocialLib/SocialLib+Weixin.h>
-```
-
-In your AppDelegate,
-```objc
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
-    return [SocialLib connectSocialPlatformWithApplication:application didFinishLaunchingWithOptions:launchOptions];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    [SocialLib applicationDidBecomeActie:application];
-}
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    return [SocialLib handleOpenURL:application
-                            openURL:url
-                  sourceApplication:sourceApplication
-                         annotation:annotation];
-}
-```
-
-### Facebook Setup
-1. In Xcode right-click your .plist file and choose "Open As Source Code".
-2. Copy & Paste the XML snippet into the body of your file `(<dict>...</dict>)`.
-3. Replace:
-   - fb{FACEBOOK_APP_ID} with your Facebook App ID and the prefix fb. E.g.: fb123456.
-   - {FACEBOOK_APP_ID} with your Facebook App ID.
-   - {Your App Name} with the Display Name you configured in the App Dashboard.
-
-```plist
-<key>CFBundleURLTypes</key>
-<array>
-  <dict>
-    <key>CFBundleURLSchemes</key>
-    <array>
-      <string>fb{FACEBOOK_APP_ID}</string>
-    </array>
-  </dict>
-</array>
-<key>FacebookAppID</key>
-<string>{FACEBOOK_APP_ID}</string>
-<key>FacebookDisplayName</key>
-<string>{Your App Name}</string>
-```
-**For iOS 9**
-```plist
-<key>NSAppTransportSecurity</key>
-<dict>
-  <key>NSExceptionDomains</key>
-  <dict>
-    <key>facebook.com</key>
-    <dict>
-      <key>NSIncludesSubdomains</key> <true/>        
-      <key>NSExceptionRequiresForwardSecrecy</key> <false/>
-    </dict>
-    <key>fbcdn.net</key>
-    <dict>
-      <key>NSIncludesSubdomains</key> <true/>
-      <key>NSExceptionRequiresForwardSecrecy</key>  <false/>
-    </dict>
-    <key>akamaihd.net</key>
-    <dict>
-      <key>NSIncludesSubdomains</key> <true/>
-      <key>NSExceptionRequiresForwardSecrecy</key> <false/>
-    </dict>
-  </dict>
-</dict>
-
-<key>LSApplicationQueriesSchemes</key>
-<array>
-    <string>fbapi</string>
-    <string>fbapi20130214</string>
-    <string>fbapi20130410</string>
-    <string>fbapi20130702</string>
-    <string>fbapi20131010</string>
-    <string>fbapi20131219</string>    
-    <string>fbapi20140410</string>
-    <string>fbapi20140116</string>
-    <string>fbapi20150313</string>
-    <string>fbapi20150629</string>
-    <string>fbauth</string>
-    <string>fbauth2</string>
-    <string>fb-messenger-api20140430</string>
-</array>
-```
-### Twitter Setup
-1. In Xcode right-click your .plist file and choose "Open As Source Code".
-2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
-	<array>...</array>)`.
-3. Replace {URL Scheme} to what you want:
-
-	```plist
-	<dict>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<string>{URL Scheme}</string>
-		</array>
-	</dict>
-	```
-4. Add following lines into body of your file `(<dict>...</dict>)`
-5. Replace:
-   - {URL Scheme} with the same URL Scheme as above.
-   - {Twitter Consumer Key} with your Twitter App Cosumer key - [Register Here](https://apps.twitter.com).
-   - {Twitter Consumer Secret} with your Twitter App Cosumer Secret - [Register Here](https://apps.twitter.com).
-   
-	```plist
-	<key>TwitterCallbackURL</key>
-	<string>{URL Scheme}</string>
-	<key>TwitterConsumerKey</key>
-	<string>{Twitter Consumer Key}</string>
-	<key>TwitterConsumerSecret</key>
-	<string>{Twitter Consumer Secret}</string>
-	```
-*For Twitter application, you must have a valid callback url, otherwise the sharing will not work.*
-
-###Tumblr Setup
-1. In Xcode right-click your .plist file and choose "Open As Source Code".
-2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
-	<array>...</array>)`.
-3. Replace {URL Scheme} to what you want, must be unique:
-
-	```plist
-	<dict>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<string>{URL Scheme}</string>
-		</array>
-	</dict>
-	```
-	
-4. Add following lines into body of your file `(<dict>...</dict>)`
-5. Replace:
-   - {URL Scheme} with the same URL Scheme as above.
-   - {Tumblr Consumer Key} with your Tumblr App Cosumer key - [Register Here](https://www.tumblr.com/oauth/apps).
-   - {Tumblr Consumer Secret} with your Tumblr App Cosumer Secret - [Register Here](https://www.tumblr.com/oauth/apps).
-   
-	```plist
-	<key>TumblrCallbackURL</key>
-	<string>{URL Scheme}</string>
-	<key>TumblrConsumerKey</key>
-	<string>{Tumblr Consumer Key}</string>
-	<key>TumblrConsumerSecret</key>
-	<string>{Tumblr Consumer Secret}</string>
-	```
-	
-###Weibo Setup
-1. In Xcode right-click your .plist file and choose "Open As Source Code".
-2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
-	<array>...</array>)`.
-3. Replace {WEIBO API ID} with your Weibo App ID:
-
-	```plist
-	<dict>
-		<key>CFBundleTypeRole</key>
-		<string>Editor</string>
-		<key>CFBundleURLName</key>
-		<string>com.weibo</string>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<string>{WEIBO API ID}</string>
-		</array>
-	</dict>
-	```
-	
-4. Add following lines into body of your file `(<dict>...</dict>)`
-5. Replace:
-   - {WEIBO API ID} with your Weibo App ID.
-   
-	```plist
-	<key>WeiboAppID</key>
-	<string>{WEIBO API ID}</string>
-	```
-
-###Weixin Setup
-1. In Xcode right-click your .plist file and choose "Open As Source Code".
-2. Copy & Paste the XML snippet into the body of your file `(<key>CFBundleURLTypes</key>
-	<array>...</array>)`.
-3. Replace {WEIXIN API ID} with your Weixin App ID:
-
-	```plist
-	<dict>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<string>{WEIXIN API ID}</string>
-		</array>
-	</dict>
-	```
-	
-4. Add following lines into body of your file `(<dict>...</dict>)`
-5. Replace:
-   - {WEIXIN API ID} with your Weixin App ID.
-   - {WEIXIN API NAME} with your Weixin App name.
-   
-	```plist
-	<key>WeixinAppID</key>
-	<string>ENTER{WEIXIN API ID}</string>
-	<key>WeixinAppName</key>
-	<string>{WEIXIN API NAME}</string>
-	```
+## Setup Guide
+You can find setup guide in the [wiki](https://github.com/darkcl/SocialLib/wiki)
 
 ## Usage
 
